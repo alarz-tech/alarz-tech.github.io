@@ -4189,7 +4189,7 @@
   }
 
   // src/client/main.tsx
-  var SERVER_URL = "wss://188.120.245.232:8080";
+  var SERVER_URL = "wss://foxhole.advisor.fvds.ru:8080";
   var PROTOCOL = "liege";
   var attackBtn = document.getElementById("attack-btn");
   attackBtn.addEventListener("click", onAttack);
