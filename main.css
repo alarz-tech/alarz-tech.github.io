@@ -12,7 +12,7 @@
 html,
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--dark);
@@ -39,6 +39,12 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   grid-row: 1;
   grid-column: 2;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 nav {
@@ -64,6 +70,19 @@ aside {
   padding-left: 0.5rem;
   margin-left: 0.5rem;
   float: right;
+}
+
+p ul {
+  margin-bottom: 0.5rem;
+}
+
+ul {
+  margin-top: 0.5rem;
+}
+
+li {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
 }
 
 aside > p {
