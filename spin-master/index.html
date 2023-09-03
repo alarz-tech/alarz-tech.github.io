@@ -21,16 +21,34 @@
       z-index: 1;
     }
 
-    #progress {
+    #pbar-container {
+      width: 20%;
+      height: 60px;
       position: absolute;
+      border-radius: 5px;
       left: 0;
       right: 0;
       top: 0;
       bottom: 0;
       margin: auto;
+    }
+
+    #pbar-fill {
+      display: block;
+      background-color: yellow;
+      height: 100%;
+    }
+
+    #pbar-label {
+      /* color: #f4cca1; */
+      position: absolute;
       width: max-content;
       height: min-content;
-      color: #f4cca1;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       font-weight: bold;
     }
@@ -42,7 +60,10 @@
     new EventSource('/esbuild').addEventListener('change', () => location.reload())
   </script> -->
   <canvas id="pixi-canvas"></canvas>
-  <p id="progress"></p>
+  <div id="pbar-container">
+    <span id="pbar-fill"></span>
+    <p id="pbar-label"></p>
+  </div>
   <script src="preloader.js"></script>
   <!-- <script src="main.js"></script> -->
 </body>
