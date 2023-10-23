@@ -1,0 +1,44 @@
+{"frames": {
+
+"pause":
+{
+	"frame": {"x":0,"y":0,"w":122,"h":122},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":122,"h":122},
+	"sourceSize": {"w":122,"h":122}
+},
+"resume":
+{
+	"frame": {"x":122,"y":0,"w":122,"h":122},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":122,"h":122},
+	"sourceSize": {"w":122,"h":122}
+},
+"sound_off":
+{
+	"frame": {"x":244,"y":0,"w":122,"h":122},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":122,"h":122},
+	"sourceSize": {"w":122,"h":122}
+},
+"sound_on":
+{
+	"frame": {"x":366,"y":0,"w":122,"h":122},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":122,"h":122},
+	"sourceSize": {"w":122,"h":122}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "gameplay_ui.png",
+	"format": "RGBA8888",
+	"size": {"w":488,"h":122},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:95b244ac9749eee2ef2fa7909b92caab:95e69bc60cdd20cbb397248c370cc42b:30d7d3b80e6af8f900408645b6be62ed$"
+}
+}
