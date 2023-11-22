@@ -1,7 +1,7 @@
 var sgSdk = function () {
 
   var config;
-  var storageKey = 'bubble-shooter-challenge-sgk';
+  var storageKey = 'glossy-bubbles-challenge-sgk';
   var storageData;
 
   function initialize(moduleArray, _config, callBack) {
