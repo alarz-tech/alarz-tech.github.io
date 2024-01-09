@@ -1,0 +1,1 @@
+{"frames":{"boss-gun":{"frame":{"x":2,"y":2,"w":127,"h":252},"rotated":false,"trimmed":true,"spriteSourceSize":{"x":1,"y":0,"w":127,"h":252},"sourceSize":{"w":129,"h":252},"pivot":{"x":0.5,"y":0.5}}},"meta":{"app":"http://github.com/odrick/free-tex-packer-core","version":"0.3.4","image":"weapons.png","format":"RGBA8888","size":{"w":131,"h":256},"scale":1}}
