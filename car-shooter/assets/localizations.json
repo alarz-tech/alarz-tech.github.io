@@ -1,8 +1,20 @@
 {
   "en": {
-    "Race": "Race"
+    "Race": "Race",
+    "Settings": "Settings",
+    "Music": "Music",
+    "Sounds": "Sounds",
+    "Restart": "Restart",
+    "Home": "Home",
+    "Continue": "Continue?"
   },
   "ru": {
-    "Race": "Гонка"
+    "Race": "Гонка",
+    "Settings": "Настройки",
+    "Music": "Музыка",
+    "Sounds": "Звуки",
+    "Restart": "Заново",
+    "Home": "Меню",
+    "Continue": "Продолжить?"
   }
 }
