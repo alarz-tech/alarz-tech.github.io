@@ -68,9 +68,9 @@
       "end": 36.5,
       "loop": false
     },
-    "projectile": {
+    "projectile_new": {
       "start": 38,
-      "end": 38.5,
+      "end": 39,
       "loop": false
     },
     "rocket_spawn_1": {
