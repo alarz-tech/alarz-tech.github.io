@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hidden Master</title>
+  <script src="https://yandex.ru/games/sdk/v2"></script>
+</head>
+<style>
+  body,
+  html {
+    overflow: hidden;
+    touch-action: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+  }
+
+  body {
+    margin: 0;
+    background-color: black;
+  }
+
+  #pixi-canvas {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+  }
+</style>
+
+<body>
+  <canvas id="pixi-canvas"></canvas>
+  <script src="main.js"></script>
+</body>
+
+</html>
