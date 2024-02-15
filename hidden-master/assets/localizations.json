@@ -1,4 +1,20 @@
 {
-  "en": {},
-  "ru": {}
+  "en": {
+    "Free": "Free",
+    "cultures": "Cultures",
+    "travel": "Travels",
+    "movies": "Movies",
+    "landscape": "Landscapes",
+    "animal": "Animals",
+    "history": "History"
+  },
+  "ru": {
+    "Free": "Бесплатно",
+    "cultures": "Культуры",
+    "travel": "Путешествия",
+    "movies": "Фильмы",
+    "landscape": "Пейзажи",
+    "animal": "Животные",
+    "history": "История"
+  }
 }
