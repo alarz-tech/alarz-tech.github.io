@@ -6,7 +6,8 @@
     "movies": "Movies",
     "landscape": "Landscapes",
     "animal": "Animals",
-    "history": "History"
+    "history": "History",
+    "Find differences": "Find differences"
   },
   "ru": {
     "Free": "Бесплатно",
@@ -15,6 +16,7 @@
     "movies": "Фильмы",
     "landscape": "Пейзажи",
     "animal": "Животные",
-    "history": "История"
+    "history": "История",
+    "Find differences": "Найди отличия"
   }
 }
