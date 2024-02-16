@@ -7,7 +7,10 @@
     "landscape": "Landscapes",
     "animal": "Animals",
     "history": "History",
-    "Find differences": "Find differences"
+    "Find differences": "Find differences",
+    "No ads": "No ads",
+    "Hints": "Hints",
+    "Shop": "Shop"
   },
   "ru": {
     "Free": "Бесплатно",
@@ -17,6 +20,9 @@
     "landscape": "Пейзажи",
     "animal": "Животные",
     "history": "История",
-    "Find differences": "Найди отличия"
+    "Find differences": "Найди отличия",
+    "No ads": "Убрать рекламу",
+    "Hints": "Подсказки",
+    "Shop": "Магазин"
   }
 }
