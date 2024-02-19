@@ -1,7 +1,7 @@
 {
   "en": {
     "Free": "Free",
-    "cultures": "Cultures",
+    "culture": "Cultures",
     "travel": "Travels",
     "movies": "Movies",
     "landscape": "Landscapes",
@@ -19,7 +19,7 @@
   },
   "ru": {
     "Free": "Бесплатно",
-    "cultures": "Культуры",
+    "culture": "Культуры",
     "travel": "Путешествия",
     "movies": "Фильмы",
     "landscape": "Пейзажи",
