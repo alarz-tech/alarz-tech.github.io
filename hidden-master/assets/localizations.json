@@ -10,7 +10,12 @@
     "Find differences": "Find differences",
     "No ads": "No ads",
     "Hints": "Hints",
-    "Shop": "Shop"
+    "Shop": "Shop",
+    "Congratulations!": "Congratulations!",
+    "Almost there!": "Almost there!",
+    "Next level": "Next level",
+    "Restart": "Restart",
+    "Skip": "Skip"
   },
   "ru": {
     "Free": "Бесплатно",
@@ -23,6 +28,11 @@
     "Find differences": "Найди отличия",
     "No ads": "Убрать рекламу",
     "Hints": "Подсказки",
-    "Shop": "Магазин"
+    "Shop": "Магазин",
+    "Congratulations!": "Поздравляем!",
+    "Almost there!": "Почти удалось!",
+    "Next level": "Продолжить",
+    "Restart": "Заново",
+    "Skip": "Пропустить"
   }
 }
