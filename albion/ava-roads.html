@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Yet Another Avalonian Roads Mapper v0.1</title>
+    <title>Yet Another Avalonian Roads Mapper</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
     <style>
         html, body {
@@ -57,866 +57,876 @@
 
 <body>
     <div id="controls">
-        <form onsubmit="addConnection(event)">
-            <input type="text" id="linkFrom" list="zones" placeholder="From zone" required>
-            <input type="text" id="linkTo" list="zones" placeholder="To zone">
-            <datalist id="zones">
-                <option value="Adrens Hill"></option>
-                <option value="Anklesnag Mire"></option>
-                <option value="Arthur's Rest"></option>
-                <option value="Aspenwood"></option>
-                <option value="Astolat"></option>
-                <option value="Avalanche Incline"></option>
-                <option value="Avalanche Ravine"></option>
-                <option value="Bank of Caerleon"></option>
-                <option value="Battlebrae Flatland"></option>
-                <option value="Battlebrae Grassland"></option>
-                <option value="Battlebrae Lake"></option>
-                <option value="Battlebrae Meadow"></option>
-                <option value="Battlebrae Peaks"></option>
-                <option value="Battlebrae Plain"></option>
-                <option value="Bedrock Passage"></option>
-                <option value="Bellever Tor"></option>
-                <option value="Birchcopse"></option>
-                <option value="Birken Fell"></option>
-                <option value="Black Monastery"></option>
-                <option value="Blackthorn Quarry"></option>
-                <option value="Bleachskull Desert"></option>
-                <option value="Bleachskull Steppe"></option>
-                <option value="Bonepool Marsh"></option>
-                <option value="Boulder Deep"></option>
-                <option value="Bowscale Fell"></option>
-                <option value="Braemore Lowland"></option>
-                <option value="Braemore Upland"></option>
-                <option value="Brambleshore Hinterlands"></option>
-                <option value="Brent Knoll"></option>
-                <option value="Bridgewatch Portal"></option>
-                <option value="Broken Fell"></option>
-                <option value="Brons Hill"></option>
-                <option value="Bryn Gorge"></option>
-                <option value="Caerleon"></option>
-                <option value="Caerleon Market"></option>
-                <option value="Caerleon Market"></option>
-                <option value="Cairn Camain"></option>
-                <option value="Cairn Cloch"></option>
-                <option value="Cairn Darg"></option>
-                <option value="Cairn Drain"></option>
-                <option value="Cairn Fidair"></option>
-                <option value="Cairn Glascore"></option>
-                <option value="Cairn Gorm"></option>
-                <option value="Camlann"></option>
-                <option value="Carns Hill"></option>
-                <option value="Caulder Fissure"></option>
-                <option value="Cedarcopse"></option>
-                <option value="Chasmlight Cave"></option>
-                <option value="Chillhag"></option>
-                <option value="Citadel of Ash"></option>
-                <option value="Cracked Earth"></option>
-                <option value="Craglight Cavern"></option>
-                <option value="Creag Dhor"></option>
-                <option value="Creag Garr"></option>
-                <option value="Creag Meagir"></option>
-                <option value="Creag Morr"></option>
-                <option value="Creag's Way"></option>
-                <option value="Croker Hill"></option>
-                <option value="Crose Gorge"></option>
-                <option value="Crosscut Skip"></option>
-                <option value="Curlew Fen"></option>
-                <option value="Daemonium Keep"></option>
-                <option value="Darkbough Snag"></option>
-                <option value="Darkground Swamp"></option>
-                <option value="Darkseep Core"></option>
-                <option value="Deadpine Forest"></option>
-                <option value="Deadvein Gully"></option>
-                <option value="Deathcap Channel"></option>
-                <option value="Deathcreep Adit"></option>
-                <option value="Deathreach Priory"></option>
-                <option value="Deathwisp Bog"></option>
-                <option value="Deathwisp Sink"></option>
-                <option value="Deeproot Wood"></option>
-                <option value="Deepwood Copse"></option>
-                <option value="Deepwood Dell"></option>
-                <option value="Deepwood Gorge"></option>
-                <option value="Deepwood Pines"></option>
-                <option value="Dewleaf Fen"></option>
-                <option value="Domhain Chasm"></option>
-                <option value="Driftwood Glen"></option>
-                <option value="Driftwood Hollow"></option>
-                <option value="Driftwood Vale"></option>
-                <option value="Driprock Tunnel"></option>
-                <option value="Drownfield Course"></option>
-                <option value="Drownfield Fen"></option>
-                <option value="Drownfield Mire"></option>
-                <option value="Drownfield Quag"></option>
-                <option value="Drownfield Rut"></option>
-                <option value="Drownfield Sink"></option>
-                <option value="Drownfield Slough"></option>
-                <option value="Drownfield Wetland"></option>
-                <option value="Drownhorse Basin"></option>
-                <option value="Drybasin Oasis"></option>
-                <option value="Drybasin Riverbed"></option>
-                <option value="Dryfield Meadow"></option>
-                <option value="Drystone Channel"></option>
-                <option value="Drytop Pillars"></option>
-                <option value="Drytop Riverbed"></option>
-                <option value="Dryvein Confluence"></option>
-                <option value="Dryvein Cross"></option>
-                <option value="Dryvein End"></option>
-                <option value="Dryvein Oasis"></option>
-                <option value="Dryvein Plain"></option>
-                <option value="Dryvein Riverbed"></option>
-                <option value="Dryvein Steppe"></option>
-                <option value="Drywater Meadow"></option>
-                <option value="Dusklight Fen"></option>
-                <option value="Dusktree Swamp"></option>
-                <option value="Eldersleep"></option>
-                <option value="Eldon Hill"></option>
-                <option value="Everglow Deep"></option>
-                <option value="Everwinter Crossing"></option>
-                <option value="Everwinter Expanse"></option>
-                <option value="Everwinter Gap"></option>
-                <option value="Everwinter Gorge"></option>
-                <option value="Everwinter Incline"></option>
-                <option value="Everwinter Passage"></option>
-                <option value="Everwinter Peak"></option>
-                <option value="Everwinter Plain"></option>
-                <option value="Everwinter Reach"></option>
-                <option value="Everwinter Shores"></option>
-                <option value="Eye of the Forest"></option>
-                <option value="Falsestep Marsh"></option>
-                <option value="Farshore Bay"></option>
-                <option value="Farshore Cape"></option>
-                <option value="Farshore Drylands"></option>
-                <option value="Farshore Esker"></option>
-                <option value="Farshore Heath"></option>
-                <option value="Farshore Lagoon"></option>
-                <option value="Felniks Hill"></option>
-                <option value="Ferndell"></option>
-                <option value="Firesink Caldera"></option>
-                <option value="Firesink Trench"></option>
-                <option value="Flammog Desolation"></option>
-                <option value="Flammog Fork"></option>
-                <option value="Flammog Valley"></option>
-                <option value="Flatriver Trough"></option>
-                <option value="Flatrock Cliffs"></option>
-                <option value="Flatrock Plateau"></option>
-                <option value="Flimmerair Steppe"></option>
-                <option value="Floatshoal Bight"></option>
-                <option value="Floatshoal Fissure"></option>
-                <option value="Floatshoal Floe"></option>
-                <option value="Flynsdell"></option>
-                <option value="Fog Fen"></option>
-                <option value="Forest Burrow"></option>
-                <option value="Fort Sterling Portal"></option>
-                <option value="Fractured Ground"></option>
-                <option value="Frostbite Chasm"></option>
-                <option value="Frostbite Mountain"></option>
-                <option value="Frostpeak Ascent"></option>
-                <option value="Frostpeak Vista"></option>
-                <option value="Frostseep Crevasse"></option>
-                <option value="Frostseep Ravine"></option>
-                <option value="Frostspring Passage"></option>
-                <option value="Frostspring Volcano"></option>
-                <option value="Garrow Fell"></option>
-                <option value="Giantweald Copse"></option>
-                <option value="Giantweald Dale"></option>
-                <option value="Giantweald Edge"></option>
-                <option value="Giantweald Glade"></option>
-                <option value="Giantweald Roots"></option>
-                <option value="Giantweald Woods"></option>
-                <option value="Glacierbreak Summit"></option>
-                <option value="Glacierfall Canyon"></option>
-                <option value="Glacierfall Cross"></option>
-                <option value="Glacierfall Fissure"></option>
-                <option value="Glacierfall Pass"></option>
-                <option value="Glacierfall Passage"></option>
-                <option value="Glacierfall Valley"></option>
-                <option value="Glowmire Grotto"></option>
-                <option value="Goffers Knoll"></option>
-                <option value="Goldshimmer Plain"></option>
-                <option value="Gravemound Brim"></option>
-                <option value="Gravemound Cliffs"></option>
-                <option value="Gravemound Hills"></option>
-                <option value="Gravemound Knoll"></option>
-                <option value="Gravemound Slope"></option>
-                <option value="Greenhollow Copse"></option>
-                <option value="Greenhollow Vale"></option>
-                <option value="Greenshore Bay"></option>
-                <option value="Greenshore Peninsula"></option>
-                <option value="Gutras Hill"></option>
-                <option value="Gwan Gorge"></option>
-                <option value="Haldon Tor"></option>
-                <option value="Haytor"></option>
-                <option value="Highbole Glen"></option>
-                <option value="Highstone Grassland"></option>
-                <option value="Highstone Loch"></option>
-                <option value="Highstone Meadow"></option>
-                <option value="Highstone Mound"></option>
-                <option value="Highstone Plains"></option>
-                <option value="Highstone Plateau"></option>
-                <option value="Hightree Borderlands"></option>
-                <option value="Hightree Cliffs"></option>
-                <option value="Hightree Dale"></option>
-                <option value="Hightree Enclave"></option>
-                <option value="Hightree Glade"></option>
-                <option value="Hightree Hillock"></option>
-                <option value="Hightree Isle"></option>
-                <option value="Hightree Lake"></option>
-                <option value="Hightree Levee"></option>
-                <option value="Hightree Pass"></option>
-                <option value="Hightree Steep"></option>
-                <option value="Hightree Strand"></option>
-                <option value="Hornbeam Wood"></option>
-                <option value="Iceburn Cliffs"></option>
-                <option value="Iceburn Firth"></option>
-                <option value="Iceburn Peaks"></option>
-                <option value="Iceburn Tundra"></option>
-                <option value="Inis Mon"></option>
-                <option value="Kilmar Tor"></option>
-                <option value="Kindlegrass Steppe"></option>
-                <option value="Larchroad"></option>
-                <option value="Lazygrass Plain"></option>
-                <option value="Lewsdon Hill"></option>
-                <option value="Longfen Arms"></option>
-                <option value="Longfen Marsh"></option>
-                <option value="Longfen Veins"></option>
-                <option value="Longmarch Meadow"></option>
-                <option value="Longshadow Plain"></option>
-                <option value="Longtimber Glen"></option>
-                <option value="Lurkers' Hollow"></option>
-                <option value="Lymhurst Portal"></option>
-                <option value="Malag Crevasse"></option>
-                <option value="Mardale"></option>
-                <option value="Martlock Portal"></option>
-                <option value="Mase Knoll"></option>
-                <option value="Mawar Gorge"></option>
-                <option value="Meltwater Bog"></option>
-                <option value="Meltwater Channel"></option>
-                <option value="Meltwater Delta"></option>
-                <option value="Meltwater Sump"></option>
-                <option value="Merlyn's Rest"></option>
-                <option value="Middlemurk Path"></option>
-                <option value="Morgana's Rest"></option>
-                <option value="Mudfoot Mounds"></option>
-                <option value="Mudfoot Sump"></option>
-                <option value="Mudrock Burrow"></option>
-                <option value="Munten Fell"></option>
-                <option value="Munten Rise"></option>
-                <option value="Munten Tundra"></option>
-                <option value="Murdergulch Cross"></option>
-                <option value="Murdergulch Divide"></option>
-                <option value="Murdergulch Gap"></option>
-                <option value="Murdergulch Ravine"></option>
-                <option value="Murdergulch Trail"></option>
-                <option value="Murkweald"></option>
-                <option value="Murky Fen"></option>
-                <option value="Nightbloom Forest"></option>
-                <option value="Nightbloom Track"></option>
-                <option value="Nightcreak Marsh"></option>
-                <option value="Northstrand Beach"></option>
-                <option value="Northstrand Dunes"></option>
-                <option value="Oakcopse"></option>
-                <option value="Ore Adit"></option>
-                <option value="Owlsong Glen"></option>
-                <option value="Parchsand Cliffs"></option>
-                <option value="Parchsand Drought"></option>
-                <option value="Parchthroat Plain"></option>
-                <option value="Pen Fenair"></option>
-                <option value="Pen Garn"></option>
-                <option value="Pen Gent"></option>
-                <option value="Pen Kerrig"></option>
-                <option value="Pen Uchaf"></option>
-                <option value="Pinecopse"></option>
-                <option value="Prospector's Hope"></option>
-                <option value="Razorrock Bank"></option>
-                <option value="Razorrock Chasm"></option>
-                <option value="Razorrock Edge"></option>
-                <option value="Razorrock Gulch"></option>
-                <option value="Razorrock Passage"></option>
-                <option value="Razorrock Ravine"></option>
-                <option value="Razorrock Valley"></option>
-                <option value="Razorrock Verge"></option>
-                <option value="Redlake"></option>
-                <option value="Redstone Plain"></option>
-                <option value="Redtree Enclave"></option>
-                <option value="Rivercopse Crossing"></option>
-                <option value="Rivercopse Curve"></option>
-                <option value="Rivercopse Fount"></option>
-                <option value="Rivercopse Path"></option>
-                <option value="Roastcorpse Steppe"></option>
-                <option value="Rock Adit"></option>
-                <option value="Rowanwood"></option>
-                <option value="Runnel Sink"></option>
-                <option value="Runnelvein Bog"></option>
-                <option value="Runnelvein Sink"></option>
-                <option value="Runnelvein Slough"></option>
-                <option value="Russerdell"></option>
-                <option value="Sabertooth Den"></option>
-                <option value="Saddle Tor"></option>
-                <option value="Sandgust Cleft"></option>
-                <option value="Sandmount Ascent"></option>
-                <option value="Sandmount Desert"></option>
-                <option value="Sandmount Esker"></option>
-                <option value="Sandmount Strand"></option>
-                <option value="Sandrift Coast"></option>
-                <option value="Sandrift Dunes"></option>
-                <option value="Sandrift Expanse"></option>
-                <option value="Sandrift Fringe"></option>
-                <option value="Sandrift Prairie"></option>
-                <option value="Sandrift Shore"></option>
-                <option value="Sandrift Steppe"></option>
-                <option value="Scuttlesink Marsh"></option>
-                <option value="Scuttlesink Mouth"></option>
-                <option value="Scuttlesink Pools"></option>
-                <option value="Shale Underway"></option>
-                <option value="Shaleheath Hills"></option>
-                <option value="Shaleheath Steep"></option>
-                <option value="Shiftshadow Expanse"></option>
-                <option value="Skullmarsh Lower"></option>
-                <option value="Skullmarsh Upper"></option>
-                <option value="Skylake Bridge"></option>
-                <option value="Skylake Hinterlands"></option>
-                <option value="Skysand Plateau"></option>
-                <option value="Skysand Ridge"></option>
-                <option value="Slakesands Canyon"></option>
-                <option value="Slakesands Mesa"></option>
-                <option value="Sleetwater Basin"></option>
-                <option value="Slimehag"></option>
-                <option value="Slithertail Marsh"></option>
-                <option value="Slowtree Plain"></option>
-                <option value="Smoothfloor Cleft"></option>
-                <option value="Smuggler's Rut"></option>
-                <option value="Snapshaft Trough"></option>
-                <option value="Southgrove Copse"></option>
-                <option value="Southgrove Escarp"></option>
-                <option value="Southgrove Thicket"></option>
-                <option value="Spectral Sump"></option>
-                <option value="Spindlewood"></option>
-                <option value="Springsump Basin"></option>
-                <option value="Springsump Melt"></option>
-                <option value="Springsump Wetland"></option>
-                <option value="Stagbourne"></option>
-                <option value="Stalagmite Adit"></option>
-                <option value="Steelhide Meadow"></option>
-                <option value="Stinkhag"></option>
-                <option value="Stonelake Fields"></option>
-                <option value="Stonelake Hillock"></option>
-                <option value="Stonemouth Bay"></option>
-                <option value="Stonemouth Northbluff"></option>
-                <option value="Stonemouth Southbluff"></option>
-                <option value="Stoneslip Passage"></option>
-                <option value="Stumprot Swamp"></option>
-                <option value="Sunfang Approach"></option>
-                <option value="Sunfang Cliffs"></option>
-                <option value="Sunfang Dawn"></option>
-                <option value="Sunfang Ravine"></option>
-                <option value="Sunfang Wasteland"></option>
-                <option value="Sunkenbough Spring"></option>
-                <option value="Sunkenbough Woods"></option>
-                <option value="Sunstrand Delta"></option>
-                <option value="Sunstrand Dunes"></option>
-                <option value="Sunstrand Quicksands"></option>
-                <option value="Sunstrand Shoal"></option>
-                <option value="Swamp Burrow"></option>
-                <option value="Swiftsands Basin"></option>
-                <option value="Swiftsands Chaparral"></option>
-                <option value="Swiftsands Plain"></option>
-                <option value="Tharcal Fissure"></option>
-                <option value="The Underway"></option>
-                <option value="Thetford Portal"></option>
-                <option value="Thirstwater Gully"></option>
-                <option value="Thirstwater Steppe"></option>
-                <option value="Thirstwater Waste"></option>
-                <option value="Thunderrock Ascent"></option>
-                <option value="Thunderrock Draw"></option>
-                <option value="Thunderrock Rapids"></option>
-                <option value="Thunderrock Upland"></option>
-                <option value="Timberscar Copse"></option>
-                <option value="Timberscar Dell"></option>
-                <option value="Timberslope Bridge"></option>
-                <option value="Timberslope Dell"></option>
-                <option value="Timberslope Grove"></option>
-                <option value="Timbertop Dale"></option>
-                <option value="Timbertop Escarp"></option>
-                <option value="Timbertop Wood"></option>
-                <option value="Twinchannel Narrows"></option>
-                <option value="Unhallowed Cloister"></option>
-                <option value="VegAnimTest"></option>
-                <option value="Vixen Tor"></option>
-                <option value="Wailing Bulwark"></option>
-                <option value="Wanderlure Basin"></option>
-                <option value="Watchwood Bluffs"></option>
-                <option value="Watchwood Grove"></option>
-                <option value="Watchwood Lakeside"></option>
-                <option value="Watchwood Precipice"></option>
-                <option value="Westweald Shore"></option>
-                <option value="Westweald Thicket"></option>
-                <option value="Wetgrave Bog"></option>
-                <option value="Wetgrave Marsh"></option>
-                <option value="Wetgrave Swale"></option>
-                <option value="Whitebank Cross"></option>
-                <option value="Whitebank Descent"></option>
-                <option value="Whitebank Ridge"></option>
-                <option value="Whitebank Shore"></option>
-                <option value="Whitebank Stream"></option>
-                <option value="Whitebank Wall"></option>
-                <option value="Whitecap Cave"></option>
-                <option value="Whitecliff Expanse"></option>
-                <option value="Whitecliff Peak"></option>
-                <option value="Whitepeak Ascent"></option>
-                <option value="Whitepeak Spring"></option>
-                <option value="Whitepeak Tundra"></option>
-                <option value="Whitewall Pass"></option>
-                <option value="Whitewall Ridge"></option>
-                <option value="Widemoor Delta"></option>
-                <option value="Widemoor End"></option>
-                <option value="Widemoor Estuary"></option>
-                <option value="Widemoor Fen"></option>
-                <option value="Widemoor Flats"></option>
-                <option value="Widemoor Hills"></option>
-                <option value="Widemoor Pool"></option>
-                <option value="Widemoor Shore"></option>
-                <option value="Widemoor Woods"></option>
-                <option value="Willow Wood"></option>
-                <option value="Willowshade Hills"></option>
-                <option value="Willowshade Icemarsh"></option>
-                <option value="Willowshade Lake"></option>
-                <option value="Willowshade Mire"></option>
-                <option value="Willowshade Pools"></option>
-                <option value="Willowshade Sink"></option>
-                <option value="Willowshade Wetlands"></option>
-                <option value="Willowsigh Marsh"></option>
-                <option value="Windgrass Border"></option>
-                <option value="Windgrass Coast"></option>
-                <option value="Windgrass Fields"></option>
-                <option value="Windgrass Gully"></option>
-                <option value="Windgrass Precipice"></option>
-                <option value="Windgrass Rill"></option>
-                <option value="Windgrass Terrace"></option>
-                <option value="Windripple Fen"></option>
-                <option value="Wispwhisper Marsh"></option>
-                <option value="Wyre Forest"></option>
-                <option value="Yew Wood"></option>
-                <option value="Cases-Ugumlos"></option>
-                <option value="Casitos-Alieam"></option>
-                <option value="Casitos-Atinaum"></option>
-                <option value="Casitos-Avaelum"></option>
-                <option value="Casos-Aiagsum"></option>
-                <option value="Casos-Aximam"></option>
-                <option value="Casos-Ayosrom"></option>
-                <option value="Casos-Uruxtum"></option>
-                <option value="Cebitos-Aeaylum"></option>
-                <option value="Cebos-Avemlum"></option>
-                <option value="Ceres-Iooinum"></option>
-                <option value="Ceritos-Avulsum"></option>
-                <option value="Ceros-Aeaylum"></option>
-                <option value="Cetitos-Aiayrom"></option>
-                <option value="Cetitos-Avixnum"></option>
-                <option value="Cetitos-Aximam"></option>
-                <option value="Cetos-Obaelos"></option>
-                <option value="Cieites-Ugumlos"></option>
-                <option value="Cieitos-Avioaum"></option>
-                <option value="Cieitos-Ayosrom"></option>
-                <option value="Cieitos-Obaelos"></option>
-                <option value="Cieitos-Otatrom"></option>
-                <option value="Cieos-Atatlum"></option>
-                <option value="Cilitos-Opodam"></option>
-                <option value="Cilos-Avioaum"></option>
-                <option value="Cilos-Ofailos"></option>
-                <option value="Cilos-Otatrom"></option>
-                <option value="Conitos-Ofailos"></option>
-                <option value="Conitos-Oxaeaum"></option>
-                <option value="Conitos-Uruxtum"></option>
-                <option value="Conos-Avaelum"></option>
-                <option value="Coritos-Avemlum"></option>
-                <option value="Coros-Aiayrom"></option>
-                <option value="Coros-Alieam"></option>
-                <option value="Coros-Atinaum"></option>
-                <option value="Coues-Exakrom"></option>
-                <option value="Couos-Ayayaum"></option>
-                <option value="Couos-Opodam"></option>
-                <option value="Curites-Exakrom"></option>
-                <option value="Curitos-Ayayaum"></option>
-                <option value="Curos-Avulsum"></option>
-                <option value="Cuyites-Iooinum"></option>
-                <option value="Cynitos-Aiagsum"></option>
-                <option value="Cynitos-Atatlum"></option>
-                <option value="Cynos-Avixnum"></option>
-                <option value="Cynos-Oxaeaum"></option>
-                <option value="Fasites-Azazsum"></option>
-                <option value="Fasitos-Atezsum"></option>
-                <option value="Fasitos-Oleraum"></option>
-                <option value="Fasitos-Oyuctum"></option>
-                <option value="Fasos-Ayiotum"></option>
-                <option value="Febites-Opavun"></option>
-                <option value="Febos-Acalun"></option>
-                <option value="Ferites-Ohohtum"></option>
-                <option value="Feritos-Enomaum"></option>
-                <option value="Feritos-Osinsum"></option>
-                <option value="Feros-Oyuctum"></option>
-                <option value="Fetos-Aiaylos"></option>
-                <option value="Fiees-Ohohtum"></option>
-                <option value="Fieites-Unavtum"></option>
-                <option value="Fieos-Aiuttum"></option>
-                <option value="Fieos-Atezsum"></option>
-                <option value="Files-Azazsum"></option>
-                <option value="Filites-Izohun"></option>
-                <option value="Filitos-Uzazlum"></option>
-                <option value="Filos-Abalam"></option>
-                <option value="Firitos-Alodrom"></option>
-                <option value="Firos-Aiavam"></option>
-                <option value="Firos-Enomaum"></option>
-                <option value="Firos-Ezatam"></option>
-                <option value="Firos-Osinsum"></option>
-                <option value="Fones-Opavun"></option>
-                <option value="Fonitos-Amaurom"></option>
-                <option value="Fonos-Aiugsum"></option>
-                <option value="Fonos-Oleraum"></option>
-                <option value="Foritos-Aiaylos"></option>
-                <option value="Foros-Egoisum"></option>
-                <option value="Foros-Uzazlum"></option>
-                <option value="Foues-Aeaosum"></option>
-                <option value="Fouitos-Aiuttum"></option>
-                <option value="Fouos-Agosaum"></option>
-                <option value="Fouos-Amaurom"></option>
-                <option value="Furitos-Aiavam"></option>
-                <option value="Fuyes-Izohun"></option>
-                <option value="Fuyitos-Acalun"></option>
-                <option value="Fuyitos-Ayiotum"></option>
-                <option value="Fynes-Unavtum"></option>
-                <option value="Fynites-Aeaosum"></option>
-                <option value="Fynitos-Abalam"></option>
-                <option value="Fynitos-Agosaum"></option>
-                <option value="Fynitos-Aiugsum"></option>
-                <option value="Fynitos-Egoisum"></option>
-                <option value="Fynitos-Ezatam"></option>
-                <option value="Fynos-Alodrom"></option>
-                <option value="Hasitos-Avaolum"></option>
-                <option value="Hasitos-Umayaum"></option>
-                <option value="Hasos-Agoitum"></option>
-                <option value="Hasos-Ayousum"></option>
-                <option value="Hasos-Inayaum"></option>
-                <option value="Hasos-Iuimaum"></option>
-                <option value="Hasos-Osuorom"></option>
-                <option value="Hebes-Ouaylos"></option>
-                <option value="Hebites-Exemrom"></option>
-                <option value="Hebitos-Atontum"></option>
-                <option value="Hebos-Ulamsum"></option>
-                <option value="Heritos-Exozlos"></option>
-                <option value="Heritos-Eyoztum"></option>
-                <option value="Heritos-Inayaum"></option>
-                <option value="Heros-Atoyam"></option>
-                <option value="Hetitos-Iuaerom"></option>
-                <option value="Hieos-Aiigaum"></option>
-                <option value="Hieos-Avaolum"></option>
-                <option value="Hiles-Izizaum"></option>
-                <option value="Hilites-Ugumtum"></option>
-                <option value="Hilitos-Aiigaum"></option>
-                <option value="Hilitos-Osuorom"></option>
-                <option value="Hiros-Exozlos"></option>
-                <option value="Hiros-Iuaerom"></option>
-                <option value="Honites-Izizaum"></option>
-                <option value="Honitos-Uxeulum"></option>
-                <option value="Honos-Oyezam"></option>
-                <option value="Honos-Umayaum"></option>
-                <option value="Horos-Ohenlum"></option>
-                <option value="Hures-Ugumtum"></option>
-                <option value="Hurites-Ieatun"></option>
-                <option value="Hurites-Ouaylos"></option>
-                <option value="Huritos-Iuimaum"></option>
-                <option value="Huritos-Oiaelos"></option>
-                <option value="Huros-Atontum"></option>
-                <option value="Huyes-Ogozlum"></option>
-                <option value="Huyitos-Agoitum"></option>
-                <option value="Huyitos-Ohenlum"></option>
-                <option value="Huyos-Eyoztum"></option>
-                <option value="Huyos-Uxeulum"></option>
-                <option value="Hynes-Exemrom"></option>
-                <option value="Hynes-Ieatun"></option>
-                <option value="Hynites-Ogozlum"></option>
-                <option value="Hynitos-Atoyam"></option>
-                <option value="Hynitos-Ayousum"></option>
-                <option value="Hynitos-Oyezam"></option>
-                <option value="Hynitos-Ulamsum"></option>
-                <option value="Hynos-Oiaelos"></option>
-                <option value="Oasitos-Aoeuam"></option>
-                <option value="Oasos-Eraerom"></option>
-                <option value="Oasos-Uromlum"></option>
-                <option value="Oebitos-Eraerom"></option>
-                <option value="Oebitos-Oyozam"></option>
-                <option value="Oebos-Ixakaum"></option>
-                <option value="Oeritos-Ecunsum"></option>
-                <option value="Oeritos-Oyexlos"></option>
-                <option value="Oetos-Ofailos"></option>
-                <option value="Oetos-Oyexlos"></option>
-                <option value="Oieitos-Ixakaum"></option>
-                <option value="Oieos-Umiutum"></option>
-                <option value="Oires-Oloblum"></option>
-                <option value="Oiritos-Eramtum"></option>
-                <option value="Oiros-Alaiam"></option>
-                <option value="Oonitos-Umiutum"></option>
-                <option value="Ooros-Ataltum"></option>
-                <option value="Ooros-Ecunsum"></option>
-                <option value="Oouitos-Alaiam"></option>
-                <option value="Oures-Araosum"></option>
-                <option value="Ouritos-Ataltum"></option>
-                <option value="Ouritos-Ofailos"></option>
-                <option value="Ouyos-Aoeuam"></option>
-                <option value="Oynites-Araosum"></option>
-                <option value="Oynites-Oloblum"></option>
-                <option value="Oynitos-Uromlum"></option>
-                <option value="Oynos-Eramtum"></option>
-                <option value="Oynos-Oyozam"></option>
-                <option value="Pasos-Avosam"></option>
-                <option value="Pebos-Avosrom"></option>
-                <option value="Peritos-Avosam"></option>
-                <option value="Peritos-Oconun"></option>
-                <option value="Peros-Aiataum"></option>
-                <option value="Petitos-Amayam"></option>
-                <option value="Petitos-Avosrom"></option>
-                <option value="Petos-Aietam"></option>
-                <option value="Pieos-Eterrom"></option>
-                <option value="Pieos-Ofairom"></option>
-                <option value="Pilitos-Eterrom"></option>
-                <option value="Pirites-Unatam"></option>
-                <option value="Piritos-Ofavam"></option>
-                <option value="Piritos-Opabrom"></option>
-                <option value="Ponitos-Aiayrom"></option>
-                <option value="Poros-Aiayrom"></option>
-                <option value="Poros-Oconun"></option>
-                <option value="Poues-Unatam"></option>
-                <option value="Pouitos-Ofairom"></option>
-                <option value="Pures-Ouozlum"></option>
-                <option value="Puros-Amayam"></option>
-                <option value="Puros-Ofavam"></option>
-                <option value="Puyitos-Aiataum"></option>
-                <option value="Pynites-Ouozlum"></option>
-                <option value="Pynitos-Aietam"></option>
-                <option value="Pynos-Opabrom"></option>
-                <option value="Qiient-Al-Nusom"></option>
-                <option value="Qiient-Al-Odesum"></option>
-                <option value="Qiient-Al-Qinsis"></option>
-                <option value="Qiient-Al-Tersas"></option>
-                <option value="Qiient-Al-Viesis"></option>
-                <option value="Qiient-Al-Vynsis"></option>
-                <option value="Qiient-Et-Nusas"></option>
-                <option value="Qiient-Et-Odetis"></option>
-                <option value="Qiient-Et-Qinsum"></option>
-                <option value="Qiient-Et-Tertum"></option>
-                <option value="Qiient-In-Nutis"></option>
-                <option value="Qiient-In-Odetum"></option>
-                <option value="Qiient-In-Qinsis"></option>
-                <option value="Qiient-In-Tersom"></option>
-                <option value="Qiient-In-Viesis"></option>
-                <option value="Qiient-In-Vyntum"></option>
-                <option value="Qiient-Nutis"></option>
-                <option value="Qiient-Oc-Odetum"></option>
-                <option value="Qiient-Odesas"></option>
-                <option value="Qiient-Qi-Nusom"></option>
-                <option value="Qiient-Qi-Odesas"></option>
-                <option value="Qiient-Qi-Tersas"></option>
-                <option value="Qiient-Qi-Vynsis"></option>
-                <option value="Qiient-Qinsum"></option>
-                <option value="Qiient-Sa-Odetis"></option>
-                <option value="Qiient-Si-Nusas"></option>
-                <option value="Qiient-Si-Odesum"></option>
-                <option value="Qiient-Si-Tertum"></option>
-                <option value="Qiient-Tersom"></option>
-                <option value="Qiient-Vyntum"></option>
-                <option value="Qiitun-Al-Duosum"></option>
-                <option value="Qiitun-Duosum"></option>
-                <option value="Qiitun-Et-Vietis"></option>
-                <option value="Qiitun-Et-Vynsom"></option>
-                <option value="Qiitun-Si-Vynsom"></option>
-                <option value="Qiitun-Vietis"></option>
-                <option value="Quaent-Al-Nusis"></option>
-                <option value="Quaent-Al-Odesum"></option>
-                <option value="Quaent-Al-Qintis"></option>
-                <option value="Quaent-Al-Tersis"></option>
-                <option value="Quaent-Al-Viesom"></option>
-                <option value="Quaent-Al-Vynsum"></option>
-                <option value="Quaent-In-Nusis"></option>
-                <option value="Quaent-In-Odesum"></option>
-                <option value="Quaent-Qintis"></option>
-                <option value="Quaent-Tersis"></option>
-                <option value="Quaent-Viesom"></option>
-                <option value="Quaent-Vynsum"></option>
-                <option value="Quatun-Et-Nusas"></option>
-                <option value="Quatun-Et-Odetum"></option>
-                <option value="Quatun-Nusas"></option>
-                <option value="Quatun-Odetum"></option>
-                <option value="Sases-Aoarsum"></option>
-                <option value="Sases-Avuotum"></option>
-                <option value="Sasitos-Oyarlum"></option>
-                <option value="Sasitos-Ugersum"></option>
-                <option value="Sasitos-Umogaum"></option>
-                <option value="Sasos-Abizaum"></option>
-                <option value="Sasos-Egeylos"></option>
-                <option value="Sasos-Oiozlum"></option>
-                <option value="Sebos-Avoirom"></option>
-                <option value="Sebos-Oyohun"></option>
-                <option value="Sebos-Ugersum"></option>
-                <option value="Secent-Al-Duosom"></option>
-                <option value="Secent-Al-Nutum"></option>
-                <option value="Secent-Al-Odetis"></option>
-                <option value="Secent-Al-Qinsom"></option>
-                <option value="Secent-Al-Tersum"></option>
-                <option value="Secent-Al-Viesum"></option>
-                <option value="Secent-Duosom"></option>
-                <option value="Secent-Et-Odesis"></option>
-                <option value="Secent-Et-Qinsas"></option>
-                <option value="Secent-Et-Vyntum"></option>
-                <option value="Secent-In-Tersum"></option>
-                <option value="Secent-Nutum"></option>
-                <option value="Secent-Odesom"></option>
-                <option value="Secent-Qi-Odesom"></option>
-                <option value="Secent-Qi-Qinsom"></option>
-                <option value="Secent-Sa-Odesis"></option>
-                <option value="Secent-Si-Odetis"></option>
-                <option value="Secent-Si-Qinsas"></option>
-                <option value="Secent-Viesum"></option>
-                <option value="Secent-Vyntum"></option>
-                <option value="Sectun-Al-Vyntis"></option>
-                <option value="Sectun-Et-Tersas"></option>
-                <option value="Sectun-In-Odesis"></option>
-                <option value="Sectun-In-Qinsom"></option>
-                <option value="Sectun-In-Vyntis"></option>
-                <option value="Sectun-Oc-Odesis"></option>
-                <option value="Sectun-Qinsom"></option>
-                <option value="Sectun-Tersas"></option>
-                <option value="Seritos-Egeylos"></option>
-                <option value="Seritos-Onaytum"></option>
-                <option value="Setent-Al-Duosas"></option>
-                <option value="Setent-Al-Qinsum"></option>
-                <option value="Setent-Al-Vietis"></option>
-                <option value="Setent-Duosas"></option>
-                <option value="Setent-Et-Nusum"></option>
-                <option value="Setent-Et-Qintis"></option>
-                <option value="Setent-In-Qinsum"></option>
-                <option value="Setent-Nusum"></option>
-                <option value="Setent-Qintis"></option>
-                <option value="Setent-Vietis"></option>
-                <option value="Setitos-Obobrom"></option>
-                <option value="Setos-Aiaitum"></option>
-                <option value="Setos-Avamsum"></option>
-                <option value="Settun-Al-Nusis"></option>
-                <option value="Settun-Al-Odetum"></option>
-                <option value="Settun-Al-Tersom"></option>
-                <option value="Settun-Al-Vynsis"></option>
-                <option value="Settun-Et-Odetum"></option>
-                <option value="Settun-In-Nusis"></option>
-                <option value="Settun-In-Odetum"></option>
-                <option value="Settun-Odetum"></option>
-                <option value="Settun-Tersom"></option>
-                <option value="Settun-Vynsis"></option>
-                <option value="Sieos-Ofugtum"></option>
-                <option value="Silitos-Abizaum"></option>
-                <option value="Silos-Apenlum"></option>
-                <option value="Silos-Oyarlum"></option>
-                <option value="Siritos-Avoirom"></option>
-                <option value="Siritos-Oyohun"></option>
-                <option value="Siros-Obobrom"></option>
-                <option value="Siros-Ofurlos"></option>
-                <option value="Sonitos-Ayailos"></option>
-                <option value="Soritos-Aiaitum"></option>
-                <option value="Soritos-Apenlum"></option>
-                <option value="Soritos-Avamsum"></option>
-                <option value="Soros-Axaesum"></option>
-                <option value="Soues-Uzurtum"></option>
-                <option value="Souitos-Oiozlum"></option>
-                <option value="Souos-Availos"></option>
-                <option value="Souos-Ososlos"></option>
-                <option value="Souos-Umogaum"></option>
-                <option value="Suyites-Avuotum"></option>
-                <option value="Suyites-Uzurtum"></option>
-                <option value="Suyitos-Axaesum"></option>
-                <option value="Suyitos-Ofugtum"></option>
-                <option value="Suyitos-Oyarlos"></option>
-                <option value="Suyos-Onaytum"></option>
-                <option value="Synites-Aoarsum"></option>
-                <option value="Synitos-Availos"></option>
-                <option value="Synitos-Ofurlos"></option>
-                <option value="Synitos-Ososlos"></option>
-                <option value="Synos-Ayailos"></option>
-                <option value="Synos-Oyarlos"></option>
-                <option value="Tasitos-Obayam"></option>
-                <option value="Tasitos-Ulaurom"></option>
-                <option value="Tasos-Iriglos"></option>
-                <option value="Tebitos-Igaelum"></option>
-                <option value="Tebitos-Odoxlum"></option>
-                <option value="Teros-Auiusum"></option>
-                <option value="Tetitos-Ayoslum"></option>
-                <option value="Tetos-Igaelum"></option>
-                <option value="Tetos-Ulaurom"></option>
-                <option value="Tieitos-Eyexrom"></option>
-                <option value="Tieitos-Ouultum"></option>
-                <option value="Tieos-Ayoslum"></option>
-                <option value="Tilitos-Ataglos"></option>
-                <option value="Tiros-Odoxlum"></option>
-                <option value="Tiros-Ouultum"></option>
-                <option value="Tonitos-Igurlum"></option>
-                <option value="Tonitos-Uxavrom"></option>
-                <option value="Tonos-Aboysum"></option>
-                <option value="Tonos-Obayam"></option>
-                <option value="Toritos-Iriglos"></option>
-                <option value="Touos-Ataglos"></option>
-                <option value="Touos-Uoemtum"></option>
-                <option value="Turitos-Atatlos"></option>
-                <option value="Turitos-Uoemtum"></option>
-                <option value="Tuyitos-Aboysum"></option>
-                <option value="Tuyitos-Auiusum"></option>
-                <option value="Tynos-Atatlos"></option>
-                <option value="Tynos-Eyexrom"></option>
-                <option value="Tynos-Igurlum"></option>
-                <option value="Tynos-Uxavrom"></option>
-                <option value="Xases-Ataglos"></option>
-                <option value="Xases-Oxoulum"></option>
-                <option value="Xasos-Aeoilos"></option>
-                <option value="Xasos-Aoemaum"></option>
-                <option value="Xasos-Oneulum"></option>
-                <option value="Xebitos-Oyogam"></option>
-                <option value="Xebos-Emimsum"></option>
-                <option value="Xebos-Exostum"></option>
-                <option value="Xerites-Oxoulum"></option>
-                <option value="Xetitos-Emimsum"></option>
-                <option value="Xetitos-Oneulum"></option>
-                <option value="Xetos-Obursum"></option>
-                <option value="Xiles-Aiavlum"></option>
-                <option value="Xilitos-Aoemaum"></option>
-                <option value="Xilos-Osayam"></option>
-                <option value="Xiros-Aiairom"></option>
-                <option value="Xonites-Aiavlum"></option>
-                <option value="Xoritos-Aiairom"></option>
-                <option value="Xoritos-Exostum"></option>
-                <option value="Xoritos-Osayam"></option>
-                <option value="Xouitos-Aeoilos"></option>
-                <option value="Xouitos-Eyoztum"></option>
-                <option value="Xouos-Aioblos"></option>
-                <option value="Xurites-Ataglos"></option>
-                <option value="Xuros-Eyoztum"></option>
-                <option value="Xuyitos-Aioblos"></option>
-                <option value="Xynitos-Obursum"></option>
-                <option value="Xynos-Oyogam"></option>
-            </datalist>
-            <input type="number" id="hours" min="0" max="23" step="1" placeholder="hh"></input>
-            <input type="number" id="minutes" min="0" max="59" step="1" placeholder="mm"></input>
-            <button type="submit">Add Connection</button>
-            <!-- <div id="save-load"> -->
-                <button onclick="document.getElementById('fileInput').click()">Import JSON</button>
-                <button onclick="exportGraph()">Export JSON</button>
-                <input type="file" id="fileInput" style="display: none" accept=".json">
-                <!-- <button onclick="logData()">Log Current Graph Data</button> -->
-                <!-- <div id="positions"></div> -->
-            <!-- </div> -->
-        </form>
+        <div>
+            <form onsubmit="addConnection(event)">
+                <input type="text" id="linkFrom" list="zones" placeholder="From zone" required>
+                <input type="text" id="linkTo" list="zones" placeholder="To zone" required>
+                <datalist id="zones">
+                    <option value="Adrens Hill"></option>
+                    <option value="Anklesnag Mire"></option>
+                    <option value="Arthur's Rest"></option>
+                    <option value="Aspenwood"></option>
+                    <option value="Astolat"></option>
+                    <option value="Avalanche Incline"></option>
+                    <option value="Avalanche Ravine"></option>
+                    <option value="Bank of Caerleon"></option>
+                    <option value="Battlebrae Flatland"></option>
+                    <option value="Battlebrae Grassland"></option>
+                    <option value="Battlebrae Lake"></option>
+                    <option value="Battlebrae Meadow"></option>
+                    <option value="Battlebrae Peaks"></option>
+                    <option value="Battlebrae Plain"></option>
+                    <option value="Bedrock Passage"></option>
+                    <option value="Bellever Tor"></option>
+                    <option value="Birchcopse"></option>
+                    <option value="Birken Fell"></option>
+                    <option value="Black Monastery"></option>
+                    <option value="Blackthorn Quarry"></option>
+                    <option value="Bleachskull Desert"></option>
+                    <option value="Bleachskull Steppe"></option>
+                    <option value="Bonepool Marsh"></option>
+                    <option value="Boulder Deep"></option>
+                    <option value="Bowscale Fell"></option>
+                    <option value="Braemore Lowland"></option>
+                    <option value="Braemore Upland"></option>
+                    <option value="Brambleshore Hinterlands"></option>
+                    <option value="Brent Knoll"></option>
+                    <option value="Bridgewatch Portal"></option>
+                    <option value="Broken Fell"></option>
+                    <option value="Brons Hill"></option>
+                    <option value="Bryn Gorge"></option>
+                    <option value="Caerleon"></option>
+                    <option value="Caerleon Market"></option>
+                    <option value="Caerleon Market"></option>
+                    <option value="Cairn Camain"></option>
+                    <option value="Cairn Cloch"></option>
+                    <option value="Cairn Darg"></option>
+                    <option value="Cairn Drain"></option>
+                    <option value="Cairn Fidair"></option>
+                    <option value="Cairn Glascore"></option>
+                    <option value="Cairn Gorm"></option>
+                    <option value="Camlann"></option>
+                    <option value="Carns Hill"></option>
+                    <option value="Caulder Fissure"></option>
+                    <option value="Cedarcopse"></option>
+                    <option value="Chasmlight Cave"></option>
+                    <option value="Chillhag"></option>
+                    <option value="Citadel of Ash"></option>
+                    <option value="Cracked Earth"></option>
+                    <option value="Craglight Cavern"></option>
+                    <option value="Creag Dhor"></option>
+                    <option value="Creag Garr"></option>
+                    <option value="Creag Meagir"></option>
+                    <option value="Creag Morr"></option>
+                    <option value="Creag's Way"></option>
+                    <option value="Croker Hill"></option>
+                    <option value="Crose Gorge"></option>
+                    <option value="Crosscut Skip"></option>
+                    <option value="Curlew Fen"></option>
+                    <option value="Daemonium Keep"></option>
+                    <option value="Darkbough Snag"></option>
+                    <option value="Darkground Swamp"></option>
+                    <option value="Darkseep Core"></option>
+                    <option value="Deadpine Forest"></option>
+                    <option value="Deadvein Gully"></option>
+                    <option value="Deathcap Channel"></option>
+                    <option value="Deathcreep Adit"></option>
+                    <option value="Deathreach Priory"></option>
+                    <option value="Deathwisp Bog"></option>
+                    <option value="Deathwisp Sink"></option>
+                    <option value="Deeproot Wood"></option>
+                    <option value="Deepwood Copse"></option>
+                    <option value="Deepwood Dell"></option>
+                    <option value="Deepwood Gorge"></option>
+                    <option value="Deepwood Pines"></option>
+                    <option value="Dewleaf Fen"></option>
+                    <option value="Domhain Chasm"></option>
+                    <option value="Driftwood Glen"></option>
+                    <option value="Driftwood Hollow"></option>
+                    <option value="Driftwood Vale"></option>
+                    <option value="Driprock Tunnel"></option>
+                    <option value="Drownfield Course"></option>
+                    <option value="Drownfield Fen"></option>
+                    <option value="Drownfield Mire"></option>
+                    <option value="Drownfield Quag"></option>
+                    <option value="Drownfield Rut"></option>
+                    <option value="Drownfield Sink"></option>
+                    <option value="Drownfield Slough"></option>
+                    <option value="Drownfield Wetland"></option>
+                    <option value="Drownhorse Basin"></option>
+                    <option value="Drybasin Oasis"></option>
+                    <option value="Drybasin Riverbed"></option>
+                    <option value="Dryfield Meadow"></option>
+                    <option value="Drystone Channel"></option>
+                    <option value="Drytop Pillars"></option>
+                    <option value="Drytop Riverbed"></option>
+                    <option value="Dryvein Confluence"></option>
+                    <option value="Dryvein Cross"></option>
+                    <option value="Dryvein End"></option>
+                    <option value="Dryvein Oasis"></option>
+                    <option value="Dryvein Plain"></option>
+                    <option value="Dryvein Riverbed"></option>
+                    <option value="Dryvein Steppe"></option>
+                    <option value="Drywater Meadow"></option>
+                    <option value="Dusklight Fen"></option>
+                    <option value="Dusktree Swamp"></option>
+                    <option value="Eldersleep"></option>
+                    <option value="Eldon Hill"></option>
+                    <option value="Everglow Deep"></option>
+                    <option value="Everwinter Crossing"></option>
+                    <option value="Everwinter Expanse"></option>
+                    <option value="Everwinter Gap"></option>
+                    <option value="Everwinter Gorge"></option>
+                    <option value="Everwinter Incline"></option>
+                    <option value="Everwinter Passage"></option>
+                    <option value="Everwinter Peak"></option>
+                    <option value="Everwinter Plain"></option>
+                    <option value="Everwinter Reach"></option>
+                    <option value="Everwinter Shores"></option>
+                    <option value="Eye of the Forest"></option>
+                    <option value="Falsestep Marsh"></option>
+                    <option value="Farshore Bay"></option>
+                    <option value="Farshore Cape"></option>
+                    <option value="Farshore Drylands"></option>
+                    <option value="Farshore Esker"></option>
+                    <option value="Farshore Heath"></option>
+                    <option value="Farshore Lagoon"></option>
+                    <option value="Felniks Hill"></option>
+                    <option value="Ferndell"></option>
+                    <option value="Firesink Caldera"></option>
+                    <option value="Firesink Trench"></option>
+                    <option value="Flammog Desolation"></option>
+                    <option value="Flammog Fork"></option>
+                    <option value="Flammog Valley"></option>
+                    <option value="Flatriver Trough"></option>
+                    <option value="Flatrock Cliffs"></option>
+                    <option value="Flatrock Plateau"></option>
+                    <option value="Flimmerair Steppe"></option>
+                    <option value="Floatshoal Bight"></option>
+                    <option value="Floatshoal Fissure"></option>
+                    <option value="Floatshoal Floe"></option>
+                    <option value="Flynsdell"></option>
+                    <option value="Fog Fen"></option>
+                    <option value="Forest Burrow"></option>
+                    <option value="Fort Sterling Portal"></option>
+                    <option value="Fractured Ground"></option>
+                    <option value="Frostbite Chasm"></option>
+                    <option value="Frostbite Mountain"></option>
+                    <option value="Frostpeak Ascent"></option>
+                    <option value="Frostpeak Vista"></option>
+                    <option value="Frostseep Crevasse"></option>
+                    <option value="Frostseep Ravine"></option>
+                    <option value="Frostspring Passage"></option>
+                    <option value="Frostspring Volcano"></option>
+                    <option value="Garrow Fell"></option>
+                    <option value="Giantweald Copse"></option>
+                    <option value="Giantweald Dale"></option>
+                    <option value="Giantweald Edge"></option>
+                    <option value="Giantweald Glade"></option>
+                    <option value="Giantweald Roots"></option>
+                    <option value="Giantweald Woods"></option>
+                    <option value="Glacierbreak Summit"></option>
+                    <option value="Glacierfall Canyon"></option>
+                    <option value="Glacierfall Cross"></option>
+                    <option value="Glacierfall Fissure"></option>
+                    <option value="Glacierfall Pass"></option>
+                    <option value="Glacierfall Passage"></option>
+                    <option value="Glacierfall Valley"></option>
+                    <option value="Glowmire Grotto"></option>
+                    <option value="Goffers Knoll"></option>
+                    <option value="Goldshimmer Plain"></option>
+                    <option value="Gravemound Brim"></option>
+                    <option value="Gravemound Cliffs"></option>
+                    <option value="Gravemound Hills"></option>
+                    <option value="Gravemound Knoll"></option>
+                    <option value="Gravemound Slope"></option>
+                    <option value="Greenhollow Copse"></option>
+                    <option value="Greenhollow Vale"></option>
+                    <option value="Greenshore Bay"></option>
+                    <option value="Greenshore Peninsula"></option>
+                    <option value="Gutras Hill"></option>
+                    <option value="Gwan Gorge"></option>
+                    <option value="Haldon Tor"></option>
+                    <option value="Haytor"></option>
+                    <option value="Highbole Glen"></option>
+                    <option value="Highstone Grassland"></option>
+                    <option value="Highstone Loch"></option>
+                    <option value="Highstone Meadow"></option>
+                    <option value="Highstone Mound"></option>
+                    <option value="Highstone Plains"></option>
+                    <option value="Highstone Plateau"></option>
+                    <option value="Hightree Borderlands"></option>
+                    <option value="Hightree Cliffs"></option>
+                    <option value="Hightree Dale"></option>
+                    <option value="Hightree Enclave"></option>
+                    <option value="Hightree Glade"></option>
+                    <option value="Hightree Hillock"></option>
+                    <option value="Hightree Isle"></option>
+                    <option value="Hightree Lake"></option>
+                    <option value="Hightree Levee"></option>
+                    <option value="Hightree Pass"></option>
+                    <option value="Hightree Steep"></option>
+                    <option value="Hightree Strand"></option>
+                    <option value="Hornbeam Wood"></option>
+                    <option value="Iceburn Cliffs"></option>
+                    <option value="Iceburn Firth"></option>
+                    <option value="Iceburn Peaks"></option>
+                    <option value="Iceburn Tundra"></option>
+                    <option value="Inis Mon"></option>
+                    <option value="Kilmar Tor"></option>
+                    <option value="Kindlegrass Steppe"></option>
+                    <option value="Larchroad"></option>
+                    <option value="Lazygrass Plain"></option>
+                    <option value="Lewsdon Hill"></option>
+                    <option value="Longfen Arms"></option>
+                    <option value="Longfen Marsh"></option>
+                    <option value="Longfen Veins"></option>
+                    <option value="Longmarch Meadow"></option>
+                    <option value="Longshadow Plain"></option>
+                    <option value="Longtimber Glen"></option>
+                    <option value="Lurkers' Hollow"></option>
+                    <option value="Lymhurst Portal"></option>
+                    <option value="Malag Crevasse"></option>
+                    <option value="Mardale"></option>
+                    <option value="Martlock Portal"></option>
+                    <option value="Mase Knoll"></option>
+                    <option value="Mawar Gorge"></option>
+                    <option value="Meltwater Bog"></option>
+                    <option value="Meltwater Channel"></option>
+                    <option value="Meltwater Delta"></option>
+                    <option value="Meltwater Sump"></option>
+                    <option value="Merlyn's Rest"></option>
+                    <option value="Middlemurk Path"></option>
+                    <option value="Morgana's Rest"></option>
+                    <option value="Mudfoot Mounds"></option>
+                    <option value="Mudfoot Sump"></option>
+                    <option value="Mudrock Burrow"></option>
+                    <option value="Munten Fell"></option>
+                    <option value="Munten Rise"></option>
+                    <option value="Munten Tundra"></option>
+                    <option value="Murdergulch Cross"></option>
+                    <option value="Murdergulch Divide"></option>
+                    <option value="Murdergulch Gap"></option>
+                    <option value="Murdergulch Ravine"></option>
+                    <option value="Murdergulch Trail"></option>
+                    <option value="Murkweald"></option>
+                    <option value="Murky Fen"></option>
+                    <option value="Nightbloom Forest"></option>
+                    <option value="Nightbloom Track"></option>
+                    <option value="Nightcreak Marsh"></option>
+                    <option value="Northstrand Beach"></option>
+                    <option value="Northstrand Dunes"></option>
+                    <option value="Oakcopse"></option>
+                    <option value="Ore Adit"></option>
+                    <option value="Owlsong Glen"></option>
+                    <option value="Parchsand Cliffs"></option>
+                    <option value="Parchsand Drought"></option>
+                    <option value="Parchthroat Plain"></option>
+                    <option value="Pen Fenair"></option>
+                    <option value="Pen Garn"></option>
+                    <option value="Pen Gent"></option>
+                    <option value="Pen Kerrig"></option>
+                    <option value="Pen Uchaf"></option>
+                    <option value="Pinecopse"></option>
+                    <option value="Prospector's Hope"></option>
+                    <option value="Razorrock Bank"></option>
+                    <option value="Razorrock Chasm"></option>
+                    <option value="Razorrock Edge"></option>
+                    <option value="Razorrock Gulch"></option>
+                    <option value="Razorrock Passage"></option>
+                    <option value="Razorrock Ravine"></option>
+                    <option value="Razorrock Valley"></option>
+                    <option value="Razorrock Verge"></option>
+                    <option value="Redlake"></option>
+                    <option value="Redstone Plain"></option>
+                    <option value="Redtree Enclave"></option>
+                    <option value="Rivercopse Crossing"></option>
+                    <option value="Rivercopse Curve"></option>
+                    <option value="Rivercopse Fount"></option>
+                    <option value="Rivercopse Path"></option>
+                    <option value="Roastcorpse Steppe"></option>
+                    <option value="Rock Adit"></option>
+                    <option value="Rowanwood"></option>
+                    <option value="Runnel Sink"></option>
+                    <option value="Runnelvein Bog"></option>
+                    <option value="Runnelvein Sink"></option>
+                    <option value="Runnelvein Slough"></option>
+                    <option value="Russerdell"></option>
+                    <option value="Sabertooth Den"></option>
+                    <option value="Saddle Tor"></option>
+                    <option value="Sandgust Cleft"></option>
+                    <option value="Sandmount Ascent"></option>
+                    <option value="Sandmount Desert"></option>
+                    <option value="Sandmount Esker"></option>
+                    <option value="Sandmount Strand"></option>
+                    <option value="Sandrift Coast"></option>
+                    <option value="Sandrift Dunes"></option>
+                    <option value="Sandrift Expanse"></option>
+                    <option value="Sandrift Fringe"></option>
+                    <option value="Sandrift Prairie"></option>
+                    <option value="Sandrift Shore"></option>
+                    <option value="Sandrift Steppe"></option>
+                    <option value="Scuttlesink Marsh"></option>
+                    <option value="Scuttlesink Mouth"></option>
+                    <option value="Scuttlesink Pools"></option>
+                    <option value="Shale Underway"></option>
+                    <option value="Shaleheath Hills"></option>
+                    <option value="Shaleheath Steep"></option>
+                    <option value="Shiftshadow Expanse"></option>
+                    <option value="Skullmarsh Lower"></option>
+                    <option value="Skullmarsh Upper"></option>
+                    <option value="Skylake Bridge"></option>
+                    <option value="Skylake Hinterlands"></option>
+                    <option value="Skysand Plateau"></option>
+                    <option value="Skysand Ridge"></option>
+                    <option value="Slakesands Canyon"></option>
+                    <option value="Slakesands Mesa"></option>
+                    <option value="Sleetwater Basin"></option>
+                    <option value="Slimehag"></option>
+                    <option value="Slithertail Marsh"></option>
+                    <option value="Slowtree Plain"></option>
+                    <option value="Smoothfloor Cleft"></option>
+                    <option value="Smuggler's Rut"></option>
+                    <option value="Snapshaft Trough"></option>
+                    <option value="Southgrove Copse"></option>
+                    <option value="Southgrove Escarp"></option>
+                    <option value="Southgrove Thicket"></option>
+                    <option value="Spectral Sump"></option>
+                    <option value="Spindlewood"></option>
+                    <option value="Springsump Basin"></option>
+                    <option value="Springsump Melt"></option>
+                    <option value="Springsump Wetland"></option>
+                    <option value="Stagbourne"></option>
+                    <option value="Stalagmite Adit"></option>
+                    <option value="Steelhide Meadow"></option>
+                    <option value="Stinkhag"></option>
+                    <option value="Stonelake Fields"></option>
+                    <option value="Stonelake Hillock"></option>
+                    <option value="Stonemouth Bay"></option>
+                    <option value="Stonemouth Northbluff"></option>
+                    <option value="Stonemouth Southbluff"></option>
+                    <option value="Stoneslip Passage"></option>
+                    <option value="Stumprot Swamp"></option>
+                    <option value="Sunfang Approach"></option>
+                    <option value="Sunfang Cliffs"></option>
+                    <option value="Sunfang Dawn"></option>
+                    <option value="Sunfang Ravine"></option>
+                    <option value="Sunfang Wasteland"></option>
+                    <option value="Sunkenbough Spring"></option>
+                    <option value="Sunkenbough Woods"></option>
+                    <option value="Sunstrand Delta"></option>
+                    <option value="Sunstrand Dunes"></option>
+                    <option value="Sunstrand Quicksands"></option>
+                    <option value="Sunstrand Shoal"></option>
+                    <option value="Swamp Burrow"></option>
+                    <option value="Swiftsands Basin"></option>
+                    <option value="Swiftsands Chaparral"></option>
+                    <option value="Swiftsands Plain"></option>
+                    <option value="Tharcal Fissure"></option>
+                    <option value="The Underway"></option>
+                    <option value="Thetford Portal"></option>
+                    <option value="Thirstwater Gully"></option>
+                    <option value="Thirstwater Steppe"></option>
+                    <option value="Thirstwater Waste"></option>
+                    <option value="Thunderrock Ascent"></option>
+                    <option value="Thunderrock Draw"></option>
+                    <option value="Thunderrock Rapids"></option>
+                    <option value="Thunderrock Upland"></option>
+                    <option value="Timberscar Copse"></option>
+                    <option value="Timberscar Dell"></option>
+                    <option value="Timberslope Bridge"></option>
+                    <option value="Timberslope Dell"></option>
+                    <option value="Timberslope Grove"></option>
+                    <option value="Timbertop Dale"></option>
+                    <option value="Timbertop Escarp"></option>
+                    <option value="Timbertop Wood"></option>
+                    <option value="Twinchannel Narrows"></option>
+                    <option value="Unhallowed Cloister"></option>
+                    <option value="VegAnimTest"></option>
+                    <option value="Vixen Tor"></option>
+                    <option value="Wailing Bulwark"></option>
+                    <option value="Wanderlure Basin"></option>
+                    <option value="Watchwood Bluffs"></option>
+                    <option value="Watchwood Grove"></option>
+                    <option value="Watchwood Lakeside"></option>
+                    <option value="Watchwood Precipice"></option>
+                    <option value="Westweald Shore"></option>
+                    <option value="Westweald Thicket"></option>
+                    <option value="Wetgrave Bog"></option>
+                    <option value="Wetgrave Marsh"></option>
+                    <option value="Wetgrave Swale"></option>
+                    <option value="Whitebank Cross"></option>
+                    <option value="Whitebank Descent"></option>
+                    <option value="Whitebank Ridge"></option>
+                    <option value="Whitebank Shore"></option>
+                    <option value="Whitebank Stream"></option>
+                    <option value="Whitebank Wall"></option>
+                    <option value="Whitecap Cave"></option>
+                    <option value="Whitecliff Expanse"></option>
+                    <option value="Whitecliff Peak"></option>
+                    <option value="Whitepeak Ascent"></option>
+                    <option value="Whitepeak Spring"></option>
+                    <option value="Whitepeak Tundra"></option>
+                    <option value="Whitewall Pass"></option>
+                    <option value="Whitewall Ridge"></option>
+                    <option value="Widemoor Delta"></option>
+                    <option value="Widemoor End"></option>
+                    <option value="Widemoor Estuary"></option>
+                    <option value="Widemoor Fen"></option>
+                    <option value="Widemoor Flats"></option>
+                    <option value="Widemoor Hills"></option>
+                    <option value="Widemoor Pool"></option>
+                    <option value="Widemoor Shore"></option>
+                    <option value="Widemoor Woods"></option>
+                    <option value="Willow Wood"></option>
+                    <option value="Willowshade Hills"></option>
+                    <option value="Willowshade Icemarsh"></option>
+                    <option value="Willowshade Lake"></option>
+                    <option value="Willowshade Mire"></option>
+                    <option value="Willowshade Pools"></option>
+                    <option value="Willowshade Sink"></option>
+                    <option value="Willowshade Wetlands"></option>
+                    <option value="Willowsigh Marsh"></option>
+                    <option value="Windgrass Border"></option>
+                    <option value="Windgrass Coast"></option>
+                    <option value="Windgrass Fields"></option>
+                    <option value="Windgrass Gully"></option>
+                    <option value="Windgrass Precipice"></option>
+                    <option value="Windgrass Rill"></option>
+                    <option value="Windgrass Terrace"></option>
+                    <option value="Windripple Fen"></option>
+                    <option value="Wispwhisper Marsh"></option>
+                    <option value="Wyre Forest"></option>
+                    <option value="Yew Wood"></option>
+                    <option value="Cases-Ugumlos"></option>
+                    <option value="Casitos-Alieam"></option>
+                    <option value="Casitos-Atinaum"></option>
+                    <option value="Casitos-Avaelum"></option>
+                    <option value="Casos-Aiagsum"></option>
+                    <option value="Casos-Aximam"></option>
+                    <option value="Casos-Ayosrom"></option>
+                    <option value="Casos-Uruxtum"></option>
+                    <option value="Cebitos-Aeaylum"></option>
+                    <option value="Cebos-Avemlum"></option>
+                    <option value="Ceres-Iooinum"></option>
+                    <option value="Ceritos-Avulsum"></option>
+                    <option value="Ceros-Aeaylum"></option>
+                    <option value="Cetitos-Aiayrom"></option>
+                    <option value="Cetitos-Avixnum"></option>
+                    <option value="Cetitos-Aximam"></option>
+                    <option value="Cetos-Obaelos"></option>
+                    <option value="Cieites-Ugumlos"></option>
+                    <option value="Cieitos-Avioaum"></option>
+                    <option value="Cieitos-Ayosrom"></option>
+                    <option value="Cieitos-Obaelos"></option>
+                    <option value="Cieitos-Otatrom"></option>
+                    <option value="Cieos-Atatlum"></option>
+                    <option value="Cilitos-Opodam"></option>
+                    <option value="Cilos-Avioaum"></option>
+                    <option value="Cilos-Ofailos"></option>
+                    <option value="Cilos-Otatrom"></option>
+                    <option value="Conitos-Ofailos"></option>
+                    <option value="Conitos-Oxaeaum"></option>
+                    <option value="Conitos-Uruxtum"></option>
+                    <option value="Conos-Avaelum"></option>
+                    <option value="Coritos-Avemlum"></option>
+                    <option value="Coros-Aiayrom"></option>
+                    <option value="Coros-Alieam"></option>
+                    <option value="Coros-Atinaum"></option>
+                    <option value="Coues-Exakrom"></option>
+                    <option value="Couos-Ayayaum"></option>
+                    <option value="Couos-Opodam"></option>
+                    <option value="Curites-Exakrom"></option>
+                    <option value="Curitos-Ayayaum"></option>
+                    <option value="Curos-Avulsum"></option>
+                    <option value="Cuyites-Iooinum"></option>
+                    <option value="Cynitos-Aiagsum"></option>
+                    <option value="Cynitos-Atatlum"></option>
+                    <option value="Cynos-Avixnum"></option>
+                    <option value="Cynos-Oxaeaum"></option>
+                    <option value="Fasites-Azazsum"></option>
+                    <option value="Fasitos-Atezsum"></option>
+                    <option value="Fasitos-Oleraum"></option>
+                    <option value="Fasitos-Oyuctum"></option>
+                    <option value="Fasos-Ayiotum"></option>
+                    <option value="Febites-Opavun"></option>
+                    <option value="Febos-Acalun"></option>
+                    <option value="Ferites-Ohohtum"></option>
+                    <option value="Feritos-Enomaum"></option>
+                    <option value="Feritos-Osinsum"></option>
+                    <option value="Feros-Oyuctum"></option>
+                    <option value="Fetos-Aiaylos"></option>
+                    <option value="Fiees-Ohohtum"></option>
+                    <option value="Fieites-Unavtum"></option>
+                    <option value="Fieos-Aiuttum"></option>
+                    <option value="Fieos-Atezsum"></option>
+                    <option value="Files-Azazsum"></option>
+                    <option value="Filites-Izohun"></option>
+                    <option value="Filitos-Uzazlum"></option>
+                    <option value="Filos-Abalam"></option>
+                    <option value="Firitos-Alodrom"></option>
+                    <option value="Firos-Aiavam"></option>
+                    <option value="Firos-Enomaum"></option>
+                    <option value="Firos-Ezatam"></option>
+                    <option value="Firos-Osinsum"></option>
+                    <option value="Fones-Opavun"></option>
+                    <option value="Fonitos-Amaurom"></option>
+                    <option value="Fonos-Aiugsum"></option>
+                    <option value="Fonos-Oleraum"></option>
+                    <option value="Foritos-Aiaylos"></option>
+                    <option value="Foros-Egoisum"></option>
+                    <option value="Foros-Uzazlum"></option>
+                    <option value="Foues-Aeaosum"></option>
+                    <option value="Fouitos-Aiuttum"></option>
+                    <option value="Fouos-Agosaum"></option>
+                    <option value="Fouos-Amaurom"></option>
+                    <option value="Furitos-Aiavam"></option>
+                    <option value="Fuyes-Izohun"></option>
+                    <option value="Fuyitos-Acalun"></option>
+                    <option value="Fuyitos-Ayiotum"></option>
+                    <option value="Fynes-Unavtum"></option>
+                    <option value="Fynites-Aeaosum"></option>
+                    <option value="Fynitos-Abalam"></option>
+                    <option value="Fynitos-Agosaum"></option>
+                    <option value="Fynitos-Aiugsum"></option>
+                    <option value="Fynitos-Egoisum"></option>
+                    <option value="Fynitos-Ezatam"></option>
+                    <option value="Fynos-Alodrom"></option>
+                    <option value="Hasitos-Avaolum"></option>
+                    <option value="Hasitos-Umayaum"></option>
+                    <option value="Hasos-Agoitum"></option>
+                    <option value="Hasos-Ayousum"></option>
+                    <option value="Hasos-Inayaum"></option>
+                    <option value="Hasos-Iuimaum"></option>
+                    <option value="Hasos-Osuorom"></option>
+                    <option value="Hebes-Ouaylos"></option>
+                    <option value="Hebites-Exemrom"></option>
+                    <option value="Hebitos-Atontum"></option>
+                    <option value="Hebos-Ulamsum"></option>
+                    <option value="Heritos-Exozlos"></option>
+                    <option value="Heritos-Eyoztum"></option>
+                    <option value="Heritos-Inayaum"></option>
+                    <option value="Heros-Atoyam"></option>
+                    <option value="Hetitos-Iuaerom"></option>
+                    <option value="Hieos-Aiigaum"></option>
+                    <option value="Hieos-Avaolum"></option>
+                    <option value="Hiles-Izizaum"></option>
+                    <option value="Hilites-Ugumtum"></option>
+                    <option value="Hilitos-Aiigaum"></option>
+                    <option value="Hilitos-Osuorom"></option>
+                    <option value="Hiros-Exozlos"></option>
+                    <option value="Hiros-Iuaerom"></option>
+                    <option value="Honites-Izizaum"></option>
+                    <option value="Honitos-Uxeulum"></option>
+                    <option value="Honos-Oyezam"></option>
+                    <option value="Honos-Umayaum"></option>
+                    <option value="Horos-Ohenlum"></option>
+                    <option value="Hures-Ugumtum"></option>
+                    <option value="Hurites-Ieatun"></option>
+                    <option value="Hurites-Ouaylos"></option>
+                    <option value="Huritos-Iuimaum"></option>
+                    <option value="Huritos-Oiaelos"></option>
+                    <option value="Huros-Atontum"></option>
+                    <option value="Huyes-Ogozlum"></option>
+                    <option value="Huyitos-Agoitum"></option>
+                    <option value="Huyitos-Ohenlum"></option>
+                    <option value="Huyos-Eyoztum"></option>
+                    <option value="Huyos-Uxeulum"></option>
+                    <option value="Hynes-Exemrom"></option>
+                    <option value="Hynes-Ieatun"></option>
+                    <option value="Hynites-Ogozlum"></option>
+                    <option value="Hynitos-Atoyam"></option>
+                    <option value="Hynitos-Ayousum"></option>
+                    <option value="Hynitos-Oyezam"></option>
+                    <option value="Hynitos-Ulamsum"></option>
+                    <option value="Hynos-Oiaelos"></option>
+                    <option value="Oasitos-Aoeuam"></option>
+                    <option value="Oasos-Eraerom"></option>
+                    <option value="Oasos-Uromlum"></option>
+                    <option value="Oebitos-Eraerom"></option>
+                    <option value="Oebitos-Oyozam"></option>
+                    <option value="Oebos-Ixakaum"></option>
+                    <option value="Oeritos-Ecunsum"></option>
+                    <option value="Oeritos-Oyexlos"></option>
+                    <option value="Oetos-Ofailos"></option>
+                    <option value="Oetos-Oyexlos"></option>
+                    <option value="Oieitos-Ixakaum"></option>
+                    <option value="Oieos-Umiutum"></option>
+                    <option value="Oires-Oloblum"></option>
+                    <option value="Oiritos-Eramtum"></option>
+                    <option value="Oiros-Alaiam"></option>
+                    <option value="Oonitos-Umiutum"></option>
+                    <option value="Ooros-Ataltum"></option>
+                    <option value="Ooros-Ecunsum"></option>
+                    <option value="Oouitos-Alaiam"></option>
+                    <option value="Oures-Araosum"></option>
+                    <option value="Ouritos-Ataltum"></option>
+                    <option value="Ouritos-Ofailos"></option>
+                    <option value="Ouyos-Aoeuam"></option>
+                    <option value="Oynites-Araosum"></option>
+                    <option value="Oynites-Oloblum"></option>
+                    <option value="Oynitos-Uromlum"></option>
+                    <option value="Oynos-Eramtum"></option>
+                    <option value="Oynos-Oyozam"></option>
+                    <option value="Pasos-Avosam"></option>
+                    <option value="Pebos-Avosrom"></option>
+                    <option value="Peritos-Avosam"></option>
+                    <option value="Peritos-Oconun"></option>
+                    <option value="Peros-Aiataum"></option>
+                    <option value="Petitos-Amayam"></option>
+                    <option value="Petitos-Avosrom"></option>
+                    <option value="Petos-Aietam"></option>
+                    <option value="Pieos-Eterrom"></option>
+                    <option value="Pieos-Ofairom"></option>
+                    <option value="Pilitos-Eterrom"></option>
+                    <option value="Pirites-Unatam"></option>
+                    <option value="Piritos-Ofavam"></option>
+                    <option value="Piritos-Opabrom"></option>
+                    <option value="Ponitos-Aiayrom"></option>
+                    <option value="Poros-Aiayrom"></option>
+                    <option value="Poros-Oconun"></option>
+                    <option value="Poues-Unatam"></option>
+                    <option value="Pouitos-Ofairom"></option>
+                    <option value="Pures-Ouozlum"></option>
+                    <option value="Puros-Amayam"></option>
+                    <option value="Puros-Ofavam"></option>
+                    <option value="Puyitos-Aiataum"></option>
+                    <option value="Pynites-Ouozlum"></option>
+                    <option value="Pynitos-Aietam"></option>
+                    <option value="Pynos-Opabrom"></option>
+                    <option value="Qiient-Al-Nusom"></option>
+                    <option value="Qiient-Al-Odesum"></option>
+                    <option value="Qiient-Al-Qinsis"></option>
+                    <option value="Qiient-Al-Tersas"></option>
+                    <option value="Qiient-Al-Viesis"></option>
+                    <option value="Qiient-Al-Vynsis"></option>
+                    <option value="Qiient-Et-Nusas"></option>
+                    <option value="Qiient-Et-Odetis"></option>
+                    <option value="Qiient-Et-Qinsum"></option>
+                    <option value="Qiient-Et-Tertum"></option>
+                    <option value="Qiient-In-Nutis"></option>
+                    <option value="Qiient-In-Odetum"></option>
+                    <option value="Qiient-In-Qinsis"></option>
+                    <option value="Qiient-In-Tersom"></option>
+                    <option value="Qiient-In-Viesis"></option>
+                    <option value="Qiient-In-Vyntum"></option>
+                    <option value="Qiient-Nutis"></option>
+                    <option value="Qiient-Oc-Odetum"></option>
+                    <option value="Qiient-Odesas"></option>
+                    <option value="Qiient-Qi-Nusom"></option>
+                    <option value="Qiient-Qi-Odesas"></option>
+                    <option value="Qiient-Qi-Tersas"></option>
+                    <option value="Qiient-Qi-Vynsis"></option>
+                    <option value="Qiient-Qinsum"></option>
+                    <option value="Qiient-Sa-Odetis"></option>
+                    <option value="Qiient-Si-Nusas"></option>
+                    <option value="Qiient-Si-Odesum"></option>
+                    <option value="Qiient-Si-Tertum"></option>
+                    <option value="Qiient-Tersom"></option>
+                    <option value="Qiient-Vyntum"></option>
+                    <option value="Qiitun-Al-Duosum"></option>
+                    <option value="Qiitun-Duosum"></option>
+                    <option value="Qiitun-Et-Vietis"></option>
+                    <option value="Qiitun-Et-Vynsom"></option>
+                    <option value="Qiitun-Si-Vynsom"></option>
+                    <option value="Qiitun-Vietis"></option>
+                    <option value="Quaent-Al-Nusis"></option>
+                    <option value="Quaent-Al-Odesum"></option>
+                    <option value="Quaent-Al-Qintis"></option>
+                    <option value="Quaent-Al-Tersis"></option>
+                    <option value="Quaent-Al-Viesom"></option>
+                    <option value="Quaent-Al-Vynsum"></option>
+                    <option value="Quaent-In-Nusis"></option>
+                    <option value="Quaent-In-Odesum"></option>
+                    <option value="Quaent-Qintis"></option>
+                    <option value="Quaent-Tersis"></option>
+                    <option value="Quaent-Viesom"></option>
+                    <option value="Quaent-Vynsum"></option>
+                    <option value="Quatun-Et-Nusas"></option>
+                    <option value="Quatun-Et-Odetum"></option>
+                    <option value="Quatun-Nusas"></option>
+                    <option value="Quatun-Odetum"></option>
+                    <option value="Sases-Aoarsum"></option>
+                    <option value="Sases-Avuotum"></option>
+                    <option value="Sasitos-Oyarlum"></option>
+                    <option value="Sasitos-Ugersum"></option>
+                    <option value="Sasitos-Umogaum"></option>
+                    <option value="Sasos-Abizaum"></option>
+                    <option value="Sasos-Egeylos"></option>
+                    <option value="Sasos-Oiozlum"></option>
+                    <option value="Sebos-Avoirom"></option>
+                    <option value="Sebos-Oyohun"></option>
+                    <option value="Sebos-Ugersum"></option>
+                    <option value="Secent-Al-Duosom"></option>
+                    <option value="Secent-Al-Nutum"></option>
+                    <option value="Secent-Al-Odetis"></option>
+                    <option value="Secent-Al-Qinsom"></option>
+                    <option value="Secent-Al-Tersum"></option>
+                    <option value="Secent-Al-Viesum"></option>
+                    <option value="Secent-Duosom"></option>
+                    <option value="Secent-Et-Odesis"></option>
+                    <option value="Secent-Et-Qinsas"></option>
+                    <option value="Secent-Et-Vyntum"></option>
+                    <option value="Secent-In-Tersum"></option>
+                    <option value="Secent-Nutum"></option>
+                    <option value="Secent-Odesom"></option>
+                    <option value="Secent-Qi-Odesom"></option>
+                    <option value="Secent-Qi-Qinsom"></option>
+                    <option value="Secent-Sa-Odesis"></option>
+                    <option value="Secent-Si-Odetis"></option>
+                    <option value="Secent-Si-Qinsas"></option>
+                    <option value="Secent-Viesum"></option>
+                    <option value="Secent-Vyntum"></option>
+                    <option value="Sectun-Al-Vyntis"></option>
+                    <option value="Sectun-Et-Tersas"></option>
+                    <option value="Sectun-In-Odesis"></option>
+                    <option value="Sectun-In-Qinsom"></option>
+                    <option value="Sectun-In-Vyntis"></option>
+                    <option value="Sectun-Oc-Odesis"></option>
+                    <option value="Sectun-Qinsom"></option>
+                    <option value="Sectun-Tersas"></option>
+                    <option value="Seritos-Egeylos"></option>
+                    <option value="Seritos-Onaytum"></option>
+                    <option value="Setent-Al-Duosas"></option>
+                    <option value="Setent-Al-Qinsum"></option>
+                    <option value="Setent-Al-Vietis"></option>
+                    <option value="Setent-Duosas"></option>
+                    <option value="Setent-Et-Nusum"></option>
+                    <option value="Setent-Et-Qintis"></option>
+                    <option value="Setent-In-Qinsum"></option>
+                    <option value="Setent-Nusum"></option>
+                    <option value="Setent-Qintis"></option>
+                    <option value="Setent-Vietis"></option>
+                    <option value="Setitos-Obobrom"></option>
+                    <option value="Setos-Aiaitum"></option>
+                    <option value="Setos-Avamsum"></option>
+                    <option value="Settun-Al-Nusis"></option>
+                    <option value="Settun-Al-Odetum"></option>
+                    <option value="Settun-Al-Tersom"></option>
+                    <option value="Settun-Al-Vynsis"></option>
+                    <option value="Settun-Et-Odetum"></option>
+                    <option value="Settun-In-Nusis"></option>
+                    <option value="Settun-In-Odetum"></option>
+                    <option value="Settun-Odetum"></option>
+                    <option value="Settun-Tersom"></option>
+                    <option value="Settun-Vynsis"></option>
+                    <option value="Sieos-Ofugtum"></option>
+                    <option value="Silitos-Abizaum"></option>
+                    <option value="Silos-Apenlum"></option>
+                    <option value="Silos-Oyarlum"></option>
+                    <option value="Siritos-Avoirom"></option>
+                    <option value="Siritos-Oyohun"></option>
+                    <option value="Siros-Obobrom"></option>
+                    <option value="Siros-Ofurlos"></option>
+                    <option value="Sonitos-Ayailos"></option>
+                    <option value="Soritos-Aiaitum"></option>
+                    <option value="Soritos-Apenlum"></option>
+                    <option value="Soritos-Avamsum"></option>
+                    <option value="Soros-Axaesum"></option>
+                    <option value="Soues-Uzurtum"></option>
+                    <option value="Souitos-Oiozlum"></option>
+                    <option value="Souos-Availos"></option>
+                    <option value="Souos-Ososlos"></option>
+                    <option value="Souos-Umogaum"></option>
+                    <option value="Suyites-Avuotum"></option>
+                    <option value="Suyites-Uzurtum"></option>
+                    <option value="Suyitos-Axaesum"></option>
+                    <option value="Suyitos-Ofugtum"></option>
+                    <option value="Suyitos-Oyarlos"></option>
+                    <option value="Suyos-Onaytum"></option>
+                    <option value="Synites-Aoarsum"></option>
+                    <option value="Synitos-Availos"></option>
+                    <option value="Synitos-Ofurlos"></option>
+                    <option value="Synitos-Ososlos"></option>
+                    <option value="Synos-Ayailos"></option>
+                    <option value="Synos-Oyarlos"></option>
+                    <option value="Tasitos-Obayam"></option>
+                    <option value="Tasitos-Ulaurom"></option>
+                    <option value="Tasos-Iriglos"></option>
+                    <option value="Tebitos-Igaelum"></option>
+                    <option value="Tebitos-Odoxlum"></option>
+                    <option value="Teros-Auiusum"></option>
+                    <option value="Tetitos-Ayoslum"></option>
+                    <option value="Tetos-Igaelum"></option>
+                    <option value="Tetos-Ulaurom"></option>
+                    <option value="Tieitos-Eyexrom"></option>
+                    <option value="Tieitos-Ouultum"></option>
+                    <option value="Tieos-Ayoslum"></option>
+                    <option value="Tilitos-Ataglos"></option>
+                    <option value="Tiros-Odoxlum"></option>
+                    <option value="Tiros-Ouultum"></option>
+                    <option value="Tonitos-Igurlum"></option>
+                    <option value="Tonitos-Uxavrom"></option>
+                    <option value="Tonos-Aboysum"></option>
+                    <option value="Tonos-Obayam"></option>
+                    <option value="Toritos-Iriglos"></option>
+                    <option value="Touos-Ataglos"></option>
+                    <option value="Touos-Uoemtum"></option>
+                    <option value="Turitos-Atatlos"></option>
+                    <option value="Turitos-Uoemtum"></option>
+                    <option value="Tuyitos-Aboysum"></option>
+                    <option value="Tuyitos-Auiusum"></option>
+                    <option value="Tynos-Atatlos"></option>
+                    <option value="Tynos-Eyexrom"></option>
+                    <option value="Tynos-Igurlum"></option>
+                    <option value="Tynos-Uxavrom"></option>
+                    <option value="Xases-Ataglos"></option>
+                    <option value="Xases-Oxoulum"></option>
+                    <option value="Xasos-Aeoilos"></option>
+                    <option value="Xasos-Aoemaum"></option>
+                    <option value="Xasos-Oneulum"></option>
+                    <option value="Xebitos-Oyogam"></option>
+                    <option value="Xebos-Emimsum"></option>
+                    <option value="Xebos-Exostum"></option>
+                    <option value="Xerites-Oxoulum"></option>
+                    <option value="Xetitos-Emimsum"></option>
+                    <option value="Xetitos-Oneulum"></option>
+                    <option value="Xetos-Obursum"></option>
+                    <option value="Xiles-Aiavlum"></option>
+                    <option value="Xilitos-Aoemaum"></option>
+                    <option value="Xilos-Osayam"></option>
+                    <option value="Xiros-Aiairom"></option>
+                    <option value="Xonites-Aiavlum"></option>
+                    <option value="Xoritos-Aiairom"></option>
+                    <option value="Xoritos-Exostum"></option>
+                    <option value="Xoritos-Osayam"></option>
+                    <option value="Xouitos-Aeoilos"></option>
+                    <option value="Xouitos-Eyoztum"></option>
+                    <option value="Xouos-Aioblos"></option>
+                    <option value="Xurites-Ataglos"></option>
+                    <option value="Xuros-Eyoztum"></option>
+                    <option value="Xuyitos-Aioblos"></option>
+                    <option value="Xynitos-Obursum"></option>
+                    <option value="Xynos-Oyogam"></option>
+                </datalist>
+                <input type="checkbox" id="isStatic" name="isStatic"/><label for="isStatic">is static</label>
+                <input type="number" id="hours" min="0" max="23" step="1" placeholder="hh"></input>
+                <input type="number" id="minutes" min="0" max="59" step="1" placeholder="mm"></input>
+                <button type="submit">Add Connection</button>
+            </form>
+        </div>
+        <div id="save-load">
+            <button onclick="clearGraph()">Clear</button>
+            <button onclick="document.getElementById('fileInput').click()">Import JSON</button>
+            <button onclick="exportGraph()">Export JSON</button>
+            <input type="file" id="fileInput" style="display: none" accept=".json">
+            <!-- <button onclick="logData()">Log Current Graph Data</button> -->
+            <!-- <div id="positions"></div> -->
+        </div>
     </div>
 
     <script>
-        const STORAGE_KEY = "ava-map@0.1";
+        // TODO: merge imports into current graph (merge links with opposite directions, overwrite later timestamps)
+        // TODO: display static zone data (blue-red-black node fill color, static/dynamic node outline)
+        // TODO: pan graph
+        const VERSION = 0.2;
+        const STORAGE_KEY = `ava-map@${VERSION}`;
+        document.title = `Yet Another Avalonian Roads Mapper v${VERSION}`;
+
         const saved = localStorage.getItem(STORAGE_KEY)
 
         // Initial data
-        let data = saved ? JSON.parse(saved) : {
+        let graphData = saved ? JSON.parse(saved) : {
             "nodes": [],
             "links": []
         }
@@ -925,53 +935,57 @@
             .domain([1, 2, 3, 4, 5, 6])
             .range(["gray", "blue", "yellow", "red", "black", "purple"]);
 
-        let svg, simulation, link, linkLabels, node;
+        let svg, g, simulation, link, linkLabels, node, zoom;
 
         function initializeGraph() {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(getPersitentData()));
 
             // Clear existing SVG if any
             d3.select("svg").remove();
 
+
             // Set up the SVG container
             const width = window.innerWidth;
             const height = window.innerHeight - document.getElementById("controls").clientHeight;
-            console.log(height);
+
+            zoom = d3.zoom()
+                .on("zoom", handleZoom);
 
             svg = d3.select("body")
                 .append("svg")
                 .attr("width", width)
-                .attr("height", height);
+                .attr("height", height)
+                .call(zoom);
+
+            graph = svg.append("g")
 
             // Create the force simulation
-            simulation = d3.forceSimulation(data.nodes)
-                .force("link", d3.forceLink(data.links)
+            simulation = d3.forceSimulation(graphData.nodes)
+                .force("link", d3.forceLink(graphData.links)
                     .id(d => d.id)
                     .distance(150))
                 .force("charge", d3.forceManyBody()
-                    .strength(-50))
+                    .strength(-30))
                 .force("center", d3.forceCenter(width / 2, height / 2));
 
-            console.log(data.links);
-
             // Create the links
-            link = svg.append("g")
+            link = graph.append("g")
                 .selectAll("line")
-                .data(data.links)
+                .data(graphData.links)
                 .join("line")
                 .attr("class", "link");
 
-            linkLabels = svg.append("g")
+            linkLabels = graph.append("g")
                 .selectAll(".link-label")
-                .data(data.links)
+                .data(graphData.links)
                 .join("text")
                 .attr("class", "link-label")
                 .style("font-size", "14px");
 
             // Create the nodes
-            node = svg.append("g")
+            node = graph.append("g")
                 .selectAll("g")
-                .data(data.nodes)
+                .data(graphData.nodes)
                 .join("g")
                 .attr("class", "node");
 
@@ -995,12 +1009,12 @@
             // Update positions on each tick
             simulation.on("tick", () => {
                 let linksRemoved = []
-                data.links = data.links.filter(l => {
+                graphData.links = graphData.links.filter(l => {
+                    if (l.ts == "static") return true;
                     const msRemaining = l.ts - Date.now();
                     if (msRemaining > 0) return true
                     else {
                         linksRemoved.push(l);
-                        console.log("removing link", l);
                         return false;
                     }
                 });
@@ -1009,10 +1023,9 @@
                     const removedList = linksRemoved.map(l => `${l.source.id} <-> ${l.target.id}`).join('\n');
                     // remove stray nodes
                     const nodesList = [];
-                    data.nodes = data.nodes.filter(n => {
-                        const res = data.links.some(l => n.id === l.target.id || n.id === l.source.id);
+                    graphData.nodes = graphData.nodes.filter(n => {
+                        const res = graphData.links.some(l => n.id === l.target.id || n.id === l.source.id);
                         if (!res) nodesList.push(n.id);
-                        console.log("filtering node", n.id, res);
                         return res
                     });
                     alert(`Connections expired:\n${removedList}\n\nZones removed:\n${nodesList.join(', ')}`);
@@ -1032,7 +1045,7 @@
                     .attr("x", d => (d.source.x + d.target.x) / 2)
                     .attr("y", d => (d.source.y + d.target.y) / 2 - 5) // Offset slightly above the line
                     .text(d => {
-                        return new Date(d.ts - Date.now()).toISOString().slice(11, 19)
+                        return d.ts == "static" ? "" : new Date(d.ts - Date.now()).toISOString().slice(11, 19)
                     });
 
                 node
@@ -1054,39 +1067,40 @@
             const targetId = document.getElementById("linkTo").value;
 
             // Check if node ID already exists
-            if (data.links.some(l => (l.source.id === sourceId && l.target.id === targetId) || (l.source.id === targetId && l.target.id === sourceId))) {
+            if (graphData.links.some(l => (l.source.id === sourceId && l.target.id === targetId) || (l.source.id === targetId && l.target.id === sourceId))) {
                 alert(`Connection ${n.source.id} - ${n.target.id} already exists!`);
                 return;
             }
 
-            if (!data.nodes.some(n => n.id === sourceId)) {
+            if (!graphData.nodes.some(n => n.id === sourceId)) {
                 // Add new node
-                data.nodes.push({
+                graphData.nodes.push({
                     id: sourceId,
                     group: 1,
                 });
             }
-            if (!data.nodes.some(n => n.id === targetId)) {
+            if (!graphData.nodes.some(n => n.id === targetId)) {
                 // Add new node
-                data.nodes.push({
+                graphData.nodes.push({
                     id: targetId,
                     group: 1,
                 });
             }
 
-            console.log(data);
-
-            const expiration = new Date();
-            const hh = parseInt(document.getElementById("hours").value) || 23
-            const mm = parseInt(document.getElementById("minutes").value) || 59
-            expiration.setTime(expiration.getTime() + (hh * 60 + mm) * 60 * 1000)
-            console.log(new Date(), hh, mm, expiration);
+            let ts = "static"
+            if (!document.getElementById("isStatic").checked) {
+                const expiration = new Date();
+                const hh = parseInt(document.getElementById("hours").value) || 23
+                const mm = parseInt(document.getElementById("minutes").value) || 59
+                expiration.setTime(expiration.getTime() + (hh * 60 + mm) * 60 * 1000)
+                ts = expiration.valueOf();
+            }
 
             // Add link
-            data.links.push({
+            graphData.links.push({
                 source: sourceId,
                 target: targetId,
-                ts: expiration.valueOf(),
+                ts,
             });
 
             // Rebuild the graph
@@ -1099,14 +1113,14 @@
 
         // Function to log positions
         function logData() {
-            const nodes = data.nodes.map(node => ({
+            const nodes = graphData.nodes.map(node => ({
                 id: node.id,
                 group: node.group,
                 x: Math.round(node.x),
                 y: Math.round(node.y)
             }));
 
-            const links = data.links.map(link => ({
+            const links = graphData.links.map(link => ({
                 source: link.source.id,
                 target: link.target.id,
                 ts: link.ts,
@@ -1114,8 +1128,6 @@
 
             document.getElementById('positions').textContent =
                 JSON.stringify({ nodes: nodes, links: links }, null, 2);
-
-            console.log(JSON.stringify(nodes));
         }
 
         // Drag functions
@@ -1134,19 +1146,43 @@
             if (!event.active) simulation.alphaTarget(0);
             d.fx = null;
             d.fy = null;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(getPersitentData()));
+        }
+
+        function handleZoom(e) {
+            graph.attr("transform", e.transform);
+        }
+
+        function clearGraph() {
+            graphData.nodes = [];
+            graphData.links = [];
+            initializeGraph();
+        }
+
+        // TODO: why l.source and l.target are objects sometimes? They should be ids
+        function getPersitentData() {
+            return {
+                nodes: graphData.nodes.map(n => ({
+                    id: n.id,
+                    group: n.group,
+                    x: n.x,
+                    y: n.y})),
+                links: graphData.links.map(l => ({
+                    source: typeof l.source == "string" ? l.source : l.source.id,
+                    target: typeof l.target == "string" ? l.target : l.target.id,
+                    ts: l.ts
+                }))
+            }
         }
 
         function exportGraph() {
-            const dataStr = JSON.stringify({
-                nodes: data.nodes.map(n => ({id: n.id, x: n.x, y: n.y})),
-                links: data.links.map(l => ({source: l.source.id, target: l.target.id, ts: l.ts}))
-            }, null, 2);
+            const dataStr = JSON.stringify(getPersitentData(), null, 2);
             const blob = new Blob([dataStr], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;
             const date = new Date();
-            link.download = `ava-roads_0.1_${date.toISOString().split("T")[0]}_${date.toUTCString().split(" ")[4]}.json`;
+            link.download = `ava-roads_${VERSION}_${date.toISOString().split("T")[0]}_${date.toUTCString().split(" ")[4]}.json`;
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -1161,7 +1197,7 @@
                     try {
                         const importedData = JSON.parse(e.target.result);
                         if (importedData.nodes && importedData.links) {
-                            data = importedData;
+                            graphData = importedData;
                             initializeGraph();
                         } else {
                             alert('Invalid JSON format. File must contain nodes and links arrays.');
