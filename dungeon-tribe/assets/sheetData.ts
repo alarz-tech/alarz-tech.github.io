@@ -1,4 +1,4 @@
-import { BaseTexture } from "@pixi/core";
+import { TextureSource } from "pixi.js";
 import { Log } from "../utils/Log";
 import { randomInt } from "../utils/randomInt";
 import { weightedPick } from "../utils/weightedPick";
@@ -231,7 +231,7 @@ export const ROOM_TILES = [
   "e4",
 ];
 
-export function enhanceSheetData(bt: BaseTexture) {
+export function enhanceSheetData(bt: TextureSource) {
   Log.log("info", "Enhancing spritesheet data");
   SHEET_DATA.meta.size.w = bt.width;
   SHEET_DATA.meta.size.h = bt.height;
