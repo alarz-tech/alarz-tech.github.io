@@ -61,6 +61,6 @@ li {
   margin-bottom: 0.3rem;
 }
 
-.sidenote {
+.sidenote, .insidenote {
   color: var(--red);
 }
